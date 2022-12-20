@@ -5,7 +5,7 @@ import Axios from 'axios';
 
 export const Button = ({
   children,
-  styles,
+  // styles,
   type,
   classname,
   onClick,
@@ -17,18 +17,14 @@ export const Button = ({
     Axios.get('https://openlibrary.org/authors/OL23919A.json').then((res) =>{
       setLists(res.data.list)
   });
+}
+
 //   useEffect(() => {
 //     fetchBookList();
-  
-// }, []);
-
-   const fetchData = () => {
-      Axios.get("https://openlibrary.org/authors/OL23919A.json")
-   }
 
   return (
     <div className="books">
-      <button className={classname} onClick={fetchData} type={type} styles={styles}>{children}</button> 
+      <button className={classname} onClick={fetchBookList} type={type} styles={styles}>{children}</button> 
       {lists.map((list) => ( 
        <div className="bookList">
           <h2>{lists?.cover}</h2>
@@ -38,6 +34,6 @@ export const Button = ({
       ))}
      </div>
   )
-} }
+} 
 
 export default Button 
