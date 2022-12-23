@@ -4,11 +4,11 @@ import styles from '../../SidePanel/Nav/styles.module.scss';
 
 export const Home = () => {
     return (
-      <div className={styles.navSidePanelContainer}>
+      <div className={styles.list}>
         <nav>
              <ul className={styles.navSidePanel}>
              <li><Button className={styles.navListItem1}>cooking</Button></li>
-             <li className={styles.navListItem2}><Button>horror</Button></li>
+             <li><Button className={styles.navListItem2}>horror</Button></li>
              <li className={styles.navListItem3}><Button>fantasy</Button></li>
             
              <li className={styles.navListItem4}><Button>mystery</Button></li>
