@@ -7,53 +7,44 @@ export const Button = ({
   children,
   type,
   className,
+  genre,
+  res,
   onClick,
   
 }) => {
-  const [cover, setCover] = useState();
-  const [title, setTitle] = useState();
-  const [author, setAuthor] = useState();
+  const [subjects, setSubjects] = useState();
 
-  const fetchData = () => {
-    const coverAPI = 'https://covers.openlibrary.org/b/$key/$value-$size.jpg';
-    const titleAPI = 'https://openlibrary.org/isbn/9780140328721.json';
-    const authorAPI = 'https://openlibrary.org/authors/OL23919A.json';
-
-    const getCoverAPI = Axios.get(coverAPI)
-    const getTitleAPI = Axios.get(titleAPI)
-    const getAuthorAPI = Axios.get(authorAPI)
-    Axios.all(getCoverAPI, getTitleAPI, getAuthorAPI).then(
-      Axios.spread((...allData) => {
-          const allDataCover = allData[0].data.name;
-      })
-    )
+  const fetchData = async () => {
+    const subjectsAPI = `https://openlibrary.org/subjects/${genre}.json`;
+    const subjectAPIResponse = await Axios.get(subjectsAPI)
+    setSubjects(subjectAPIResponse);
   }
 
   useEffect(() => {
-    fetchData();
+    fetchData(`https://openlibrary.org/subjects/${genre}.json`).then(res);
   }, []);
 
-
-  const getFetchBookList = () => {
-    Axios.get('https://openlibrary.org/authors/OL23919A.json').then((res) =>{
-    console.log(res)
-    setAuthor(res.data.author)
-    console.log(res)
-  });
-}
-
   return (
-    <div className="books">
-      <button className={className} onClick={fetchData} type={type}>{children}</button> 
-      {author && author.map((list) => ( 
-       <div className="bookList">
-          <h2>{list?.cover}</h2>  
-          <h2>{list?.title}</h2>
-          <h2>{list?.name}</h2>
-      </div>
-      ))}
-     </div>
-  )
-} 
+    <div className={style.container}>
+        <button className={className} onClick={fetchData} type={type}>{children}</button> 
 
+      <div className={style.genreSubject}>
+        {subjects && subjects.map((genreSubject) => {
+           return subjects.map((index) => {
+             return (
+                 <ul className="genre">
+                   <li><Button key={index} genre={genre.data.cooking} onClick={subjects}>{children}</Button></li>
+                    <li><Button key={index} genre={genre.horror} onClick={fetchData}>{children}</Button></li>
+                   <li><Button key={index} genre={genre.fantasy} onClick={fetchData}>{children}</Button></li>
+                   <li><Button key={index} genre={genre.mystery} onClick={fetchData}>{children}</Button></li>
+                   <li><Button key={index} genre={genre.personaldevelopment} onClick={fetchData}>{children}</Button></li>
+                   <li><Button key={index} genre={genre.romance} onClick={fetchData}>{children}</Button></li>
+                   <li><Button key={index} genre={genre.sciFi} onClick={fetchData}>{children}</Button></li> 
+                 </ul>           
+               )
+             })
+           })}
+        </div>
+     </div>
+  )}
 export default Button 

@@ -7,14 +7,13 @@ export const Home = () => {
       <div className={styles.list}>
         <nav>
              <ul className={styles.navSidePanel}>
-             <li><Button className={styles.navListItem1}>cooking</Button></li>
-             <li><Button className={styles.navListItem2}>horror</Button></li>
-             <li className={styles.navListItem3}><Button>fantasy</Button></li>
-            
-             <li className={styles.navListItem4}><Button>mystery</Button></li>
-             <li className={styles.navListItem5}><Button>personal development</Button></li>
-             <li className={styles.navListItem6}><Button>romance</Button></li>
-             <li className={styles.navListItem7}><Button>sci-fi</Button></li>
+             <li><Button className={styles.navListItem1} genre="cooking">cooking</Button></li>
+             <li><Button className={styles.navListItem2} genre="horror">horror</Button></li>
+             <li><Button className={styles.navListItem3} genre="fantasy">fantasy</Button></li>
+             <li><Button className={styles.navListItem4} genre="mystery">mystery</Button></li>
+             <li><Button className={styles.navListItem5} genre="personal development">personal development</Button></li>
+             <li><Button className={styles.navListItem6} genre="romance">romance</Button></li>
+             <li><Button className={styles.navListItem7} genre="sci-fi">sci-fi</Button></li>
             </ul>
         </nav>
       </div>
