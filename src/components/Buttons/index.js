@@ -2,8 +2,9 @@ import React from "react";
 import style from '../../Layout/SidePanel/Nav/styles.module.scss'
 import { useState, useEffect } from 'react';
 import Axios from 'axios';
+import Button from '../../Layout/SidePanel/Nav/styles.module.scss'
 
-export const Button = ({
+export const ButtonFeature = ({
   children,
   type,
   className,
@@ -12,8 +13,9 @@ export const Button = ({
   onClick,
   
 }) => {
-  const [subjects, setSubjects] = useState();
 
+  const [subjects, setSubjects] = useState([]);
+  
   const fetchData = async () => {
     const subjectsAPI = `https://openlibrary.org/subjects/${genre}.json`;
     const subjectAPIResponse = await Axios.get(subjectsAPI)
@@ -26,14 +28,17 @@ export const Button = ({
   }, []);
 
   return (
-    <div className={style.container}>
-      <div className={style.genreSubject}>
-        {subjects && subjects.map(() => {
+    <div>
+       <ul style={style.navList}>
+         {subjects.map((genre) => {
            return (
-              <button className={className} onClick={() => setSubjects.data} type={type}>{children}</button>                             
-            )
-          })}
-      </div>
-  </div>
-)}
-export default Button 
+             <li key={genre}>
+             <Button className={className} type={type} onClick={genre}>{children}</Button>
+             </li>
+          )}
+        )
+       </ul>
+    </div>
+  ))     
+}
+export default ButtonFeature 

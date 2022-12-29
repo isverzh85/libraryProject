@@ -1,21 +1,19 @@
 import React from "react";
-import Button from '../../../components/Buttons/index';
 import styles from '../../SidePanel/Nav/styles.module.scss';
+import Button from '../../../components/Buttons/index';
 
 export const Home = () => {
     return (
       <div className={styles.list}>
-        <nav>
-             <ul className={styles.navSidePanel}>
-             <li><Button className={styles.navListItem1} genre="cooking">cooking</Button></li>
-             <li><Button className={styles.navListItem2} genre="horror">horror</Button></li>
-             <li><Button className={styles.navListItem3} genre="fantasy">fantasy</Button></li>
-             <li><Button className={styles.navListItem4} genre="mystery">mystery</Button></li>
-             <li><Button className={styles.navListItem5} genre="personal development">personal development</Button></li>
-             <li><Button className={styles.navListItem6} genre="romance">romance</Button></li>
-             <li><Button className={styles.navListItem7} genre="sci-fi">sci-fi</Button></li>
+          <ul className={styles.navSidePanel}>
+             <Button className={styles.navListItem1} type="button">cooking</Button>
+             <Button className={styles.navListItem2} type="button">horror</Button>
+             <Button className={styles.navListItem3} type="button">fantasy</Button>
+             <Button className={styles.navListItem4} type="button">mystery</Button>
+             <Button className={styles.navListItem5} type="button">personal development</Button>
+             <Button className={styles.navListItem6} type="button">romance</Button>
+             <Button className={styles.navListItem7} type="button">sci-fi</Button>
             </ul>
-        </nav>
       </div>
     )
 }
