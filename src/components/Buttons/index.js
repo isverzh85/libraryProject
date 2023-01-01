@@ -15,7 +15,7 @@ export const ButtonFeature = ({
   
 }) => {
 
-  const [bookLists, setBookList] = useState()
+  const [bookLists, setBookList] = useState([])
   
   const getBookData = async () => {
     const bookListAPI = `https://openlibrary.org/subjects/${genre}.json`;
@@ -30,9 +30,9 @@ export const ButtonFeature = ({
 
   return (
     <div classname={style.navBookPage}>
-          {bookLists.map((bookList, index => {
+          {bookLists.map((bookList => {
              return(
-               <button key={index} onClick={getBookData}>{children}
+               <button key={bookList.id} onClick={bookLists}>{children}
                  </button>
              )
           }))}
