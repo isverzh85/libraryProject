@@ -2,43 +2,42 @@ import React from "react";
 import style from '../../Layout/SidePanel/Nav/styles.module.scss'
 import { useState, useEffect } from 'react';
 import Axios from 'axios';
-import Button from '../../Layout/SidePanel/Nav/styles.module.scss'
+import Button from '../../Layout/SidePanel/Nav/Nav'
 
 export const ButtonFeature = ({
   children,
   type,
   className,
   genre,
+  bookList,
   res,
   onClick,
   
 }) => {
 
-  const [subjects, setSubjects] = useState([]);
+  const [bookLists, setBookList] = useState()
   
-  const fetchData = async () => {
-    const subjectsAPI = `https://openlibrary.org/subjects/${genre}.json`;
-    const subjectAPIResponse = await Axios.get(subjectsAPI)
-    setSubjects(subjectAPIResponse.data.works);
-    console.log(subjectAPIResponse)
+  const getBookData = async () => {
+    const bookListAPI = `https://openlibrary.org/subjects/${genre}.json`;
+    const bookListAPIResponse = await Axios.get(bookListAPI)
+    setBookList(bookListAPIResponse.data);
+    console.log(bookListAPIResponse)
   }
 
   useEffect(() => {
-     fetchData(`https://openlibrary.org/subjects/${genre}.json`).then(res)
+     getBookData()
   }, []);
 
   return (
-    <div>
-       <ul style={style.navList}>
-         {subjects.map((genre) => {
-           return (
-             <li key={genre}>
-             <Button className={className} type={type} onClick={genre}>{children}</Button>
-             </li>
-          )}
-        )
-       </ul>
-    </div>
-  ))     
-}
+    <div classname={style.navBookPage}>
+          {bookLists.map((bookList, index => {
+             return(
+               <button key={index} onClick={getBookData}>{children}
+                 </button>
+             )
+          }))}
+      </div>
+  )}    
+  
+
 export default ButtonFeature 
