@@ -30,9 +30,9 @@ export const ButtonFeature = ({
 
   return (
     <div classname={style.navBookPage}>
-          {bookLists.map((bookList => {
+          {bookLists.map((genre, bookList => {
              return(
-               <button key={bookList.id} onClick={bookLists}>{children}
+               <button key={bookLists.id} onClick={getBookData.data.works}>{children}
                  </button>
              )
           }))}
