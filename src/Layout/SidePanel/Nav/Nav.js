@@ -1,7 +1,6 @@
 import React from "react";
 import styles from '../../SidePanel/Nav/styles.module.scss';
 
-
 export const Home = () => {
     return (
       <div className={styles.list}>
