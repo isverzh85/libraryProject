@@ -17,29 +17,25 @@ export const Nav = ({
     console.log(bookListAPIResponse)
   };
 
-  useEffect(() => {
-     getBookData()
-  }, []);
-  
-    return (
+ return (
       <div className={styles.list}>
-        {bookLists.length > 0 && bookLists.map((bookList => {
+         {bookLists.length > 0 && bookLists.map((bookList => {
           return(
-            <button className={styles.navListItem1} type="button" onClick={() => getBookData(bookList)}>cooking</button> 
-          
-          
-            )
+            <button type="button" onClick={() => setBookList(bookLists)}>cooking</button> 
+            <button type="button" onClick={() => setBookList(bookLists)}>horror</button>
+            <button className={styles.navListItem3} type="button">fantasy</button>
+            <button className={styles.navListItem4} type="button">mystery</button>
+            <button className={styles.navListItem5} type="button">personal development</button>
+            <button className={styles.navListItem6} type="button">romance</button>
+            <button className={styles.navListItem7} type="button">sci-fi</button>
+          </div>
+         )
       }))}
+    )
 
        
-        <button className={styles.navListItem2} type="button">horror</button>
-        <button className={styles.navListItem3} type="button">fantasy</button>
-        <button className={styles.navListItem4} type="button">mystery</button>
-        <button className={styles.navListItem5} type="button">personal development</button>
-        <button className={styles.navListItem6} type="button">romance</button>
-        <button className={styles.navListItem7} type="button">sci-fi</button>
-      </div>
-    )
-}
+     
+    
+
 
 export default Nav;
