@@ -1,10 +1,37 @@
 import React from "react";
 import styles from '../../SidePanel/Nav/styles.module.scss';
+import { useState, useEffect } from 'react';
+import Axios from 'axios';
 
-export const Home = () => {
+export const Nav = ({
+  genre,
+  
+}) => {
+
+  const [bookLists, setBookList] = useState([]);
+  
+  const getBookData = async () => {
+    const bookListAPI = `https://openlibrary.org/subjects/${genre}.json`;
+    const bookListAPIResponse = await Axios.get(bookListAPI)
+    setBookList(bookListAPIResponse.data);
+    console.log(bookListAPIResponse)
+  };
+
+  useEffect(() => {
+     getBookData()
+  }, []);
+  
     return (
       <div className={styles.list}>
-        <button className={styles.navListItem1} type="button">cooking</button> 
+        {bookLists.length > 0 && bookLists.map((bookList => {
+          return(
+            <button className={styles.navListItem1} type="button" onClick={() => getBookData(bookList)}>cooking</button> 
+          
+          
+            )
+      }))}
+
+       
         <button className={styles.navListItem2} type="button">horror</button>
         <button className={styles.navListItem3} type="button">fantasy</button>
         <button className={styles.navListItem4} type="button">mystery</button>
@@ -15,4 +42,4 @@ export const Home = () => {
     )
 }
 
-export default Home;
+export default Nav;
