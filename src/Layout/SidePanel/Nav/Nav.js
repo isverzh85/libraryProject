@@ -4,36 +4,32 @@ import { useState } from 'react';
 import Axios from 'axios';
 
 export const Nav = () => {
+    const [bookLists, setBookList] = useState([]); 
+    const getBookData = async (genre) => {
 
-  const [bookLists, setBookList] = useState([]); 
+     let books = [];
+     const bookListAPI = `https://openlibrary.org/subjects/${genre}.json`;
+     const bookListAPIResponse = await Axios.get(bookListAPI)
+     let bookList = bookListAPIResponse.data.works;
+     bookList.forEach((book) => { 
+       let bookToRender = {
+         title:book.title, 
+         author:book.authors, 
+         cover_url: `https://covers.openlibrary.org/b/id/${book.cover_id}-L.jpg`
+      }
+       books.push(bookToRender)
+       console.log(bookToRender)
+     })     
+     setBookList(bookListAPIResponse.data.works)
 
-  const getBookData = async (genre) => {
 
-    const bookListAPI = `https://openlibrary.org/subjects/${genre}.json`;
-    const bookListAPIResponse = await Axios.get(bookListAPI)
-    setBookList(bookListAPIResponse.data.works)
   }
-
-  const getCoverAPI = async(key, size, url) => {
-    const coversAPI = `https://covers.openlibrary.org/b/id/${key}-${size}.jpg`;
-    return coversAPI
-  }
-
-  async function fetchImage(url) {
-    const img = new Image();
-    return new Promise((res, rej) => {
-        img.onload = () => res(img);
-        img.onerror = e => rej(e);
-        img.src = url;
-    });
-}
 
 
  return (
       <div className={styles.list}>
          {bookLists.length > 0 && bookLists.map((book => {
            return (
-
              <div>             
                 {book.title}
                 {book.authors.map(author => {
@@ -42,8 +38,7 @@ export const Nav = () => {
                    )     
                 })
               } 
-                {() => getCoverAPI(book.cover_edition_key)} 
-                <img src = {getCoverAPI(book.cover_edition_key, 'L')} /> 
+                <img src = {book.cover_url} />  
                 
              </div>
             )
