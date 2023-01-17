@@ -20,12 +20,13 @@ export const Nav = () => {
        books.push(bookToRender)
        console.log(bookToRender)
      })     
-     setBookList(bookListAPIResponse.data.works)
-
-
+     setBookList(books)
   }
 
 
+
+
+  
  return (
       <div className={styles.list}>
          {bookLists.length > 0 && bookLists.map((book => {
@@ -38,13 +39,12 @@ export const Nav = () => {
                    )     
                 })
               } 
-                <img src = {book.cover_url} />  
-                
+                <img src={book.cover_url} alt="book cover"  />  
              </div>
             )
            })
         )}
-      <div>
+      <div className={styles.listButtons}>
           <button type="button" className={styles.navListItem1} onClick={() => getBookData('cooking')}>cooking</button> 
           <button type="button" className={styles.navListItem2} onClick={() => getBookData('horror')}>horror</button>
           <button type="button" className={styles.navListItem3} onClick={() => getBookData('fantasy')}>fantasy</button>
