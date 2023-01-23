@@ -19,24 +19,14 @@ export const Nav = () => {
         first_publish_year: book.first_publish_year
       }
         books.push(bookToRender)
-
-
-        books.sort((book1, book2) => book1.first_publish_year - book2.first_publish_year);
-
-
-      console.log(book)
-        
-     })     
+        books.sort((book1, book2) => book2.first_publish_year - book1.first_publish_year);
+        console.log(book)
+    })     
         setBookList(books)
    }
 
 
-
-
-
-
-
-
+   
  return (
       <div className={styles.list}>
          {bookLists?.length > 0 && bookLists?.map((book => {
