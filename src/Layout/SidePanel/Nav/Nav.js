@@ -7,33 +7,43 @@ export const Nav = () => {
     const [bookLists, setBookList] = useState([]); 
     const getBookData = async (genre) => {
 
-     let books = [];
-     const bookListAPI = `https://openlibrary.org/subjects/${genre}.json`;
-     const bookListAPIResponse = await Axios.get(bookListAPI)
-     let bookList = bookListAPIResponse.data.works;
-     bookList.forEach((book) => { 
-       let bookToRender = {
-         title:book.title, 
-         author:book.authors, 
-         cover_url: `https://covers.openlibrary.org/b/id/${book.cover_id}-L.jpg`
+    let books = [];
+    const bookListAPI = `https://openlibrary.org/subjects/${genre}.json`;
+    const bookListAPIResponse = await Axios.get(bookListAPI)
+    let bookList = bookListAPIResponse.data.works;
+        bookList.forEach((book) => { 
+    let bookToRender = {
+        title:book.title, 
+        author:book.authors, 
+        cover_url: `https://covers.openlibrary.org/b/id/${book.cover_id}-L.jpg`,
+        first_publish_year: book.first_publish_year
       }
-       books.push(bookToRender)
-       console.log(bookToRender)
+        books.push(bookToRender)
+
+
+        books.sort((book1, book2) => book1.first_publish_year - book2.first_publish_year);
+
+
+      console.log(book)
+        
      })     
-     setBookList(books)
-  }
+        setBookList(books)
+   }
 
 
 
 
-  
+
+
+
+
  return (
       <div className={styles.list}>
-         {bookLists.length > 0 && bookLists.map((book => {
+         {bookLists?.length > 0 && bookLists?.map((book => {
            return (
              <div>             
                 {book.title}
-                {book.authors.map(author => {
+                {book.authors?.map(author => {
                    return(
                       <div>{author.name}</div>
                    )     
