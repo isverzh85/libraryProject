@@ -1,14 +1,14 @@
 .list{
     background:green;
     width: 100%;
-    padding: 20px;
+    padding: 20px;  
 }
 
 .listButtons{
     display: flex;
     flex-direction: column;
     position: absolute;
-    width:270px;
+    width:20%;
     height: 150%;
 }
 
@@ -19,9 +19,17 @@
 
 .navListItem1{
     font-size: 60px;
+    font-style: normal;
+    font-weight: 500;
     font-family: Inter;
-    color:pink;
-    border-radius: 25px;
+    color: #FF8286;
+    border: 4px solid #FF8286;
+    border-radius: 100px;
+    box-sizing: border-box;
+    width: 300px;
+    height: 100px;
+    top: 38px;
+    left: 47px;
     margin: auto;
 }
 
@@ -29,23 +37,36 @@
     font-size: 60px;
     margin: auto;
     font-family: Inter;
-    color: yellow;
-    border-radius:25px;
+    color: #FFD056;
+    border-radius:100px;
+    border: 4px solid #FFD056;
+    box-sizing: border-box;
+    width: 300px;
+    height: 100px;
+    top: 38px;
+    left: 47px;
 }
 
 .navListItem3{
     font-size: 60px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 29px;
+    border: 4px solid #5BD8FF ;
+    box-sizing: border-box;
+    width: 300px;
+    height: 100px;
     margin: auto;
     font-family: Inter;
-    color: blue;
-    border-radius:25px;
+    color: #5BD8FF;
+    border-radius:100px;
 }
 
 .navListItem4{
     font-size: 60px;
     margin: auto;
     font-family: Inter;
-    color: black;
+    color: #000000;
     border-radius:25px;
 }
 
@@ -53,7 +74,7 @@
     font-size: 60px;
     margin: auto;
     font-family: Inter;
-    color: white;
+    color: #FFFFFF;
     border-radius:25px;
 }
 
@@ -61,7 +82,8 @@
     font-size: 60px;
     margin: auto;
     font-family: Inter;
-    color: purple;
+    background: #D38CFF ;
+    color: #FFFFFF;
     border-radius:25px;
 }
 
@@ -69,6 +91,29 @@
     font-size: 60px;
     margin: auto;
     font-family: Inter;
-    color: white;
+    color: #5AFF3F;
     border-radius:25px;
+}
+.title{
+    color: #FFFFFF;
+}
+
+.author{
+    color: #FFFFFF;
+
+}
+
+.cover{
+    display:flex;
+}
+
+.list{
+    display:flex;
+}
+
+.year{
+    font-size: 44px;
+    font-family:Inter;
+    color: #FFFFFF;
+
 }
