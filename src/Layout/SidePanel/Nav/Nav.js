@@ -26,11 +26,21 @@ export const Nav = () => {
         setBookList(books)
    }
 console.log(bookLists)
+
  return (
-    
-      <div className={styles.list}>
-         {bookLists?.length > 0 && bookLists?.map((book => {
-           const year = book.first_publish_year
+         <div className={styles.list}>
+            <nav className={styles.listButtons}>
+               <button type="button" className={styles.navListItem1} onClick={() => getBookData('cooking')}>cooking</button> 
+               <button type="button" className={styles.navListItem2} onClick={() => getBookData('horror')}>horror</button>
+               <button type="button" className={styles.navListItem3} onClick={() => getBookData('fantasy')}>fantasy</button>
+               <button type="button" className={styles.navListItem4} onClick={() => getBookData('mystery')}>mystery</button>
+               <button type="button" className={styles.navListItem5} onClick={() => getBookData('personal_development')}>personal development</button>
+               <button type="button" className={styles.navListItem6} onClick={() => getBookData('romance')}>romance</button>
+               <button type="button" className={styles.navListItem7} onClick={() => getBookData('sci-fi')}>sci-fi</button>
+            </nav>
+            <div className={styles.listBook}>  
+              {bookLists?.length > 0 && bookLists?.map((book => {
+               const year = book.first_publish_year
            return (
              <div className={styles.bookList}>
                 <div className={styles.year}>{year}</div>
@@ -48,19 +58,11 @@ console.log(bookLists)
                 })
               } 
               </div>
-             
             )
            })
         )}
-      <div className={styles.listButtons}>
-          <button type="button" className={styles.navListItem1} onClick={() => getBookData('cooking')}>cooking</button> 
-          <button type="button" className={styles.navListItem2} onClick={() => getBookData('horror')}>horror</button>
-          <button type="button" className={styles.navListItem3} onClick={() => getBookData('fantasy')}>fantasy</button>
-          <button type="button" className={styles.navListItem4} onClick={() => getBookData('mystery')}>mystery</button>
-          <button type="button" className={styles.navListItem5} onClick={() => getBookData('personal_development')}>personal development</button>
-          <button type="button" className={styles.navListItem6} onClick={() => getBookData('romance')}>romance</button>
-          <button type="button" className={styles.navListItem7} onClick={() => getBookData('sci-fi')}>sci-fi</button>
-       </div>
+        </div>
+  
     </div>
  )};
  
