@@ -29,6 +29,7 @@ console.log(bookLists)
 
  return (
          <div className={styles.list}>
+            <div className={styles.text}>uses OpenLibrary API</div>
             <nav className={styles.listButtons}>
                <button type="button" className={styles.navListItem1} onClick={() => getBookData('cooking')}>cooking</button> 
                <button type="button" className={styles.navListItem2} onClick={() => getBookData('horror')}>horror</button>
@@ -50,7 +51,6 @@ console.log(bookLists)
                   <div className={styles.title}>
                      {book.title}
                    </div>
-                    
                        {book.authors?.map(author => {
                          return(
                        <div className={styles.author}>{author.name}</div>
