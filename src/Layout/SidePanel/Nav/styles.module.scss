@@ -20,7 +20,7 @@
     font-size: 24px;
     font-style: normal;
     font-weight: 700;
-    font-family: Inter;
+    font-family: 'Inter', sans-serif;
     line-height: 29px;
     color: #FF8286;
     background: #435F53;
@@ -38,7 +38,7 @@
     font-style: normal;
     line-height: 29px;
     margin: 3% 10%;
-    font-family: Inter;
+    font-family: 'Inter', sans-serif;
     color: #FFD056;
     background: #435F53;
     border-radius:100px;
@@ -58,7 +58,7 @@
     width: 150px;
     height: 60px;
     margin: 5% 10% 1%;
-    font-family: Inter;
+    font-family: 'Inter', sans-serif;
     color: #5BD8FF;
     background: #435F53;
     border-radius:100px;
@@ -74,7 +74,7 @@
     width: 150px;
     height: 70px;
     margin: 10%;
-    font-family: Inter;
+    font-family: 'Inter', sans-serif;
     color: #000000;
     background: #435F53;
     border-radius:100px;
@@ -90,7 +90,7 @@
     width: 300px;
     height: 80px;
     margin: 1% 9%;
-    font-family: Inter;
+    font-family: 'Inter', sans-serif;
     color: #FFFFFF;
     background: #435F53;
     border-radius:100px;
@@ -106,7 +106,7 @@
     width: 150px;
     height: 80px;
     margin: 10%;
-    font-family: Inter;
+    font-family: 'Inter', sans-serif;
     background: #D38CFF ;
     color: #FFFFFF;
     border-radius:100px;
@@ -121,15 +121,15 @@
     box-sizing: border-box;
     width: 150px;
     height: 60px;
-    margin: 10%;
-    font-family: Inter;
+    margin: 1% 14% 42% 11%;;
+    font-family: 'Inter', sans-serif;
     color: #5AFF3F;
     background: #435F53;
     border-radius:100px;
 }
 .title{
     color: #FFFFFF;
-    font-family: Inter;
+    font-family: 'Inter', sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 20px;
@@ -139,7 +139,7 @@
 }
 
 .author{
-    font-family: Inter;
+    font-family: 'Inter', sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 20px;
@@ -164,7 +164,7 @@
     font-weight: 700;
     line-height: 53px;
     font-size: 44px;
-    font-family:Inter;
+    font-family: 'Inter', sans-serif;
     color: #FFFFFF;
     margin: 7%  40% 7%;
 }
@@ -174,10 +174,10 @@
 }
 
 .text{
-    font-family:Inter;
+    font-family: 'Inter', sans-serif;
     font-weight: 700;
     font-size: 14px;
     line-height: 16.94px;
     color: #FFFFFF;
-    margin: 36% 5%;
+    margin: 12% 13%;
 }
