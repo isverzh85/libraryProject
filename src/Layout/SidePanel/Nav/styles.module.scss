@@ -136,6 +136,7 @@
     line-height: 24px;
     margin-left:40%;
     margin-bottom: 3%;
+    text-align:justify;
 }
 
 .author{
@@ -147,6 +148,7 @@
     color: #FFFFFF;
     margin-left:45%;
     margin-bottom: 3%;
+    text-align: initial;
 }
 
 .cover{
@@ -180,4 +182,12 @@
     line-height: 16.94px;
     color: #FFFFFF;
     margin: 12% 13%;
+}
+
+.line{
+    border: 1px solid #C9C9C9;
+    width: 1024px;
+    height: 0px;
+    color: #C9C9C9;
+    transform: rotate(90deg);
 }

@@ -29,6 +29,7 @@ console.log(bookLists)
 
  return (
          <div className={styles.list}>
+            
             <nav className={styles.listButtons}>
                <button type="button" className={styles.navListItem1} onClick={() => getBookData('cooking')}>cooking</button> 
                <button type="button" className={styles.navListItem2} onClick={() => getBookData('horror')}>horror</button>
@@ -41,7 +42,7 @@ console.log(bookLists)
                <div className={styles.text}>uses OpenLibrary API</div>
 
             </nav>
-
+            <div className={styles.line}></div>
             <div className={styles.listBook}>  
               {bookLists?.length > 0 && bookLists?.map((book => {
                const year = book.first_publish_year
