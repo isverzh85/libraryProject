@@ -2,6 +2,7 @@ import React from "react";
 import styles from '../../SidePanel/Nav/styles.module.scss';
 import { useState } from 'react';
 import Axios from 'axios';
+import cn from 'classnames'
 
 export const Nav = () => {
     const [bookLists, setBookList] = useState([]); 
@@ -31,13 +32,13 @@ console.log(bookLists)
          <div className={styles.list}>
             
             <nav className={styles.listButtons}>
-               <button type="button" className={styles.navListItem1} onClick={() => getBookData('cooking')}>cooking</button> 
-               <button type="button" className={styles.navListItem2} onClick={() => getBookData('horror')}>horror</button>
-               <button type="button" className={styles.navListItem3} onClick={() => getBookData('fantasy')}>fantasy</button>
-               <button type="button" className={styles.navListItem4} onClick={() => getBookData('mystery')}>mystery</button>
-               <button type="button" className={styles.navListItem5} onClick={() => getBookData('personal_development')}>personal development</button>
-               <button type="button" className={styles.navListItem6} onClick={() => getBookData('romance')}>romance</button>
-               <button type="button" className={styles.navListItem7} onClick={() => getBookData('sci-fi')}>sci-fi</button>
+               <button type="button" className={cn(styles.navButton, styles.navListItem1)} onClick={() => getBookData('cooking')}>cooking</button> 
+               <button type="button" className={cn(styles.navButton, styles.navListItem2)} onClick={() => getBookData('horror')}>horror</button>
+               <button type="button" className={cn(styles.navButton, styles.navListItem3)} onClick={() => getBookData('fantasy')}>fantasy</button>
+               <button type="button" className={cn(styles.navButton, styles.navListItem4)} onClick={() => getBookData('mystery')}>mystery</button>
+               <button type="button" className={cn(styles.navButton, styles.navListItem5)} onClick={() => getBookData('personal_development')}>personal development</button>
+               <button type="button" className={cn(styles.navButton, styles.navListItem6)} onClick={() => getBookData('romance')}>romance</button>
+               <button type="button" className={cn(styles.navButton, styles.navListItem7)} onClick={() => getBookData('sci-fi')}>sci-fi</button>
                
                <div className={styles.text}>uses OpenLibrary API</div>
 
@@ -46,7 +47,7 @@ console.log(bookLists)
               {bookLists?.length > 0 && bookLists?.map((book => {
                const year = book.first_publish_year
            return (
-             <div className={styles.bookList}>
+             <div className={styles.book}>
                 <div className={styles.year}>{year}</div>
                 <div>
                   <img className={styles.cover} src={book.cover_url} alt="book cover"  />  

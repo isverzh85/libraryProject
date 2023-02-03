@@ -7,7 +7,7 @@
 .listButtons{
     display: flex;
     flex-direction: column;
-    width:20%;
+    width:25%;
     height: 100vh;
     border-right: 1px solid #C9C9C9;
 }
@@ -17,12 +17,17 @@
     list-style:none;
 }
 
-.navListItem1{
+.navButton{
     font-size: 24px;
     font-style: normal;
     font-weight: 700;
     font-family: 'Inter', sans-serif;
     line-height: 29px;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+}
+
+.navListItem1{
     color: #FF8286;
     background: #435F53;
     border: 4px solid #FF8286;
@@ -30,16 +35,9 @@
     box-sizing: border-box;
     width: 178px;
     height: 55px;
-    margin: 8% 10%;
 }
 
 .navListItem2{
-    font-size: 24px;
-    font-weight: 700;
-    font-style: normal;
-    line-height: 29px;
-    margin: 3% 10%;
-    font-family: 'Inter', sans-serif;
     color: #FFD056;
     background: #435F53;
     border-radius:100px;
@@ -50,15 +48,10 @@
 }
 
 .navListItem3{
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 29px;
     border: 4px solid #5BD8FF ;
     box-sizing: border-box;
     width: 150px;
     height: 60px;
-    margin: 5% 10% 1%;
     font-family: 'Inter', sans-serif;
     color: #5BD8FF;
     background: #435F53;
@@ -66,15 +59,10 @@
 }
 
 .navListItem4{
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 29px;
     border: 4px solid #000000 ;
     box-sizing: border-box;
     width: 150px;
     height: 70px;
-    margin: 10%;
     font-family: 'Inter', sans-serif;
     color: #000000;
     background: #435F53;
@@ -82,15 +70,10 @@
 }
 
 .navListItem5{
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 29px;
     border: 4px solid #FFFFFF ;
     box-sizing: border-box;
     width: 300px;
     height: 80px;
-    margin: 1% 9%;
     font-family: 'Inter', sans-serif;
     color: #FFFFFF;
     background: #435F53;
@@ -98,15 +81,10 @@
 }
 
 .navListItem6{
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 29px;
     border: 4px solid #D38CFF;
     box-sizing: border-box;
     width: 150px;
     height: 80px;
-    margin: 10%;
     font-family: 'Inter', sans-serif;
     background: #D38CFF ;
     color: #FFFFFF;
@@ -114,20 +92,17 @@
 }
 
 .navListItem7{
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 29px;
     border: 4px solid #5AFF3F;
     box-sizing: border-box;
     width: 150px;
     height: 60px;
-    margin: 1% 14% 42% 11%;;
     font-family: 'Inter', sans-serif;
     color: #5AFF3F;
     background: #435F53;
     border-radius:100px;
+    margin-bottom: 70%;
 }
+
 .title{
     color: #FFFFFF;
     font-family: 'Inter', sans-serif;
@@ -135,9 +110,6 @@
     font-weight: 400;
     font-size: 20px;
     line-height: 24px;
-    margin-left:40%;
-    margin-bottom: 3%;
-    text-align:justify;
 }
 
 .author{
@@ -147,9 +119,7 @@
     font-size: 20px;
     line-height: 24px;
     color: #FFFFFF;
-    margin-left:45%;
-    margin-bottom: 3%;
-    text-align: initial;
+    margin-bottom:2%;
 }
 
 .cover{
@@ -164,16 +134,21 @@
 .year{
     font-style: normal;
     font-weight: 700;
-    line-height: 53px;
+    line-height: 53.25px;
     font-size: 44px;
     font-family: 'Inter', sans-serif;
     color: #FFFFFF;
-    margin: 7%  40% 7%;
+    width: 106px;
+    margin-bottom: 2%;
 }
 
 .listBook{
     display: grid;
-    grid-template-columns:1fr 1fr 1fr;
+    flex:1;
+}
+
+.book{
+    //text-align:center;
 }
 
 .text{
@@ -182,6 +157,5 @@
     font-size: 14px;
     line-height: 16.94px;
     color: #FFFFFF;
-    margin: 12% 13%;
 }
 
