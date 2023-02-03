@@ -42,7 +42,6 @@ console.log(bookLists)
                <div className={styles.text}>uses OpenLibrary API</div>
 
             </nav>
-            <div className={styles.line}></div>
             <div className={styles.listBook}>  
               {bookLists?.length > 0 && bookLists?.map((book => {
                const year = book.first_publish_year
