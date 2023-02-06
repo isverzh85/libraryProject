@@ -1,7 +1,7 @@
 import React from "react";
 import styles from '../../SidePanel/Nav/styles.module.scss';
 import { useState } from 'react';
-import Axios from 'axios';
+import Axios, { all } from 'axios';
 import cn from 'classnames'
 
 export const Nav = () => {
@@ -20,17 +20,15 @@ export const Nav = () => {
         first_publish_year: book.first_publish_year
       }
         books.push(bookToRender)
-        books.sort((book1, book2) => book2.first_publish_year - book1.first_publish_year);
-        //put logic for the if and else for the year 
-        console.log(book)
-    })     
-        setBookList(books)
+   })
+      let uniqueBookYears = [...new Set(books.map(book => book.first_publish_year)) ]
+      books = books.filter(book => uniqueBookYears.includes(book.first_publish_year))
+      books.sort((book1, book2) => book2.first_publish_year - book1.first_publish_year)
+      setBookList(books)
    }
-console.log(bookLists)
 
  return (
-         <div className={styles.list}>
-            
+         <div className={styles.list}>  
             <nav className={styles.listButtons}>
                <button type="button" className={cn(styles.navButton, styles.navListItem1)} onClick={() => getBookData('cooking')}>cooking</button> 
                <button type="button" className={cn(styles.navButton, styles.navListItem2)} onClick={() => getBookData('horror')}>horror</button>
@@ -39,22 +37,25 @@ console.log(bookLists)
                <button type="button" className={cn(styles.navButton, styles.navListItem5)} onClick={() => getBookData('personal_development')}>personal development</button>
                <button type="button" className={cn(styles.navButton, styles.navListItem6)} onClick={() => getBookData('romance')}>romance</button>
                <button type="button" className={cn(styles.navButton, styles.navListItem7)} onClick={() => getBookData('sci-fi')}>sci-fi</button>
-               
                <div className={styles.text}>uses OpenLibrary API</div>
-
             </nav>
             <div className={styles.listBook}>  
-              {bookLists?.length > 0 && bookLists?.map((book => {
+              {bookLists?.length > 0 && bookLists?.map((book, index) => {
                const year = book.first_publish_year
+               let prevYear;
+                  if (index > 0) {
+                  prevYear = bookLists[index - 1].first_publish_year;
+               }
            return (
-             <div className={styles.book}>
-                <div className={styles.year}>{year}</div>
-                <div>
+             <div className={styles.bookContainer}>
+                {prevYear !== year && (
+                   <div className={styles.year}>{year}</div>
+                ) 
+               }
+               <div className={styles.book}>
                   <img className={styles.cover} src={book.cover_url} alt="book cover"  />  
-                </div>
-                  <div className={styles.title}>
-                     {book.title}
-                   </div>
+               </div>
+                  <div className={styles.title}>{book.title} </div>
                        {book.authors?.map(author => {
                          return(
                        <div className={styles.author}>{author.name}</div>
@@ -62,11 +63,10 @@ console.log(bookLists)
                 })
               } 
               </div>
-            )
+           )
            })
-        )}
+         }
         </div>
-  
     </div>
  )};
  
