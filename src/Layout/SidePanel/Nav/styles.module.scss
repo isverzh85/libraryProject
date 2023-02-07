@@ -10,6 +10,7 @@
     width:25%;
     height: 1000vh;
     border-right: 1px solid #C9C9C9;
+    padding-right: 40px;
 }
 
 .navSidePanel{
@@ -182,8 +183,15 @@
     color: #FFFFFF;
 }
 
-.bookContainer{
+.yearContainer{
    display: grid;
-   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-   flex-direction: column;
+   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+   grid-gap:20px;
+   align-items: start;
+   margin: 1%  3%;
+}
+
+.bookContainer{
+    display: flex;
+
 }

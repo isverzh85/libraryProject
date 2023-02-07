@@ -47,11 +47,12 @@ export const Nav = () => {
                   prevYear = bookLists[index - 1].first_publish_year;
                }
            return (
-             <div className={styles.bookContainer}>
+             <div className={styles.yearContainer}>
                 {prevYear !== year && (
                    <div className={styles.year}>{year}</div>
                 ) 
                }
+               <div className={styles.bookContainer}>
                <div className={styles.book}>
                   <img className={styles.cover} src={book.cover_url} alt="book cover"  />  
                </div>
@@ -62,6 +63,7 @@ export const Nav = () => {
                    )     
                 })
               } 
+              </div>
               </div>
            )
            })
