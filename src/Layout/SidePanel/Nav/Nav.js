@@ -34,7 +34,6 @@ export const Nav = () => {
    let groupedBooks = groupBy(books, 'first_publish_year');
    let years = Object.keys(groupedBooks).sort((year1, year2) => year2 - year1);
    let bookData = years.map(year => ({ year, books: groupedBooks[year] }));
-
       setBookList(bookData)
    }
 
@@ -85,7 +84,6 @@ export const Nav = () => {
             );
           })}
       </div>
-           ) 
     </div>
  )};
  
