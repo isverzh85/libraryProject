@@ -140,8 +140,9 @@
 }
 
 .cover{
-    width: 176px;
+    width: 116px;
     height: 244px;
+    background-color: blue;
 }
 
 .list{
@@ -159,20 +160,18 @@
     text-align: center;
 }
 
-.listBook{
-    display: grid;
-    grid-template-columns: repeat(1, 3fr);
-    flex:1;
+.listOfBooks{
+    display: flex;
 }
 
 .book{
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    width: 176px;
-    height: 244px;
-    margin-top:104px;
-    margin-left:482px;
+    flex-direction: column;
+    //align-items: center;
+    //width: 176px;
+    //height: 244px;
+    margin-top:30px;
+    //margin-left:482px;
 }
 
 .text{
@@ -193,5 +192,22 @@
 
 .bookContainer{
     display: flex;
+    flex-direction: column;
+    justify-content: center ;
+}     
 
+.mainContainer{
+    margin: 8% 10% 4% ;
+}
+
+.rectangle{
+    color: black;
+}
+
+.bookCoverContainer{
+    color: orange;
+    width: 200px;
+    height:100px;
+    background-color: #f2f2f2;
+    border:1px solid black;
 }
