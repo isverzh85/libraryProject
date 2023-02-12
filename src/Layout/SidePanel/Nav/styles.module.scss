@@ -1,16 +1,22 @@
 .list{
+    width:370px;
+    height: 200px;
+    margin-left:24px;
+    border-radius:10px;
+    background:rgba(0, 0, 0, 0.3);
+    margin:7px  4px 2px;
+    padding:4px 10px 10px 10px;
+}
+
+.description{
     background:#435F53;
-    width: 100%;
-    padding: 20px;  
+    padding:30px;
+    width:30%;
 }
 
 .listButtons{
-    display: flex;
-    flex-direction: column;
     width:25%;
     height: 1000vh;
-    border-right: 1px solid #C9C9C9;
-    padding-right: 40px;
 }
 
 .navSidePanel{
@@ -119,7 +125,7 @@
 }
 
 .title{
-    color: #FFFFFF;
+    color: #373737;
     font-family: 'Inter', sans-serif;
     font-style: normal;
     width: 150px;
@@ -134,18 +140,14 @@
     font-weight: 400;
     font-size: 20px;
     line-height: 24px;
-    color: #FFFFFF;
+    color: #373737;
     margin-bottom:2%;
 }
 
 .cover{
     width: 116px;
-    height: 244px;
+    height: 200px;
     background-color: blue;
-}
-
-.list{
-    display:flex;
 }
 
 .year{
@@ -154,7 +156,7 @@
     line-height: 53.25px;
     font-size: 44px;
     font-family: 'Inter', sans-serif;
-    color: #FFFFFF;
+    color: #373737;
     width: 106px;
     text-align: center;
 }
@@ -164,13 +166,9 @@
 }
 
 .book{
-    display: flex;
-    flex-direction: column;
-    //align-items: center;
-    //width: 176px;
-    //height: 244px;
-    margin-top:30px;
-    //margin-left:482px;
+    display: inline-block;
+    margin-top:5px;
+    margin-bottom:15px;
 }
 
 .text{
@@ -208,3 +206,48 @@
     background-color: #f2f2f2;
     border:1px solid black;
 }
+
+.name{
+    width:328px;
+    height:24px;
+    margin-top:10px;
+    margin-left:10px;
+    font-family:'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    line-height:24.2px;
+    color: #FFFFFF;
+}
+
+.paragraph{
+    font-family:'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    color: #FFFFFF;
+    margin-right: 35px;
+    margin-bottom: 30px;
+}
+
+.textBoxContainer{
+    display: flex;
+}
+.bookButton{
+    box-sizing:border-box;
+    position: absolute;
+    top: 70%;
+    left: 44%;
+    width:30px;
+    height:20px;
+    background:#6BAEC4;
+    border:1px solid #35689C;
+    color: white;
+}
+
+.book:hover .book-button {
+    display: block;
+    background-color: #000000;
+    color: #ffffff;
+    cursor: pointer;
+  }

@@ -11,8 +11,10 @@ const groupBy = (list, key) => {
    }, {});
  };
 
-export const Nav = () => {
+export const Nav = ({genre}) => {
     const [bookLists, setBookList] = useState([]); 
+    const [selected, setSelected] = useState(false);
+
 
     const getBookData = async (genre) => {
     let books = [];
@@ -31,6 +33,8 @@ export const Nav = () => {
         books.push(bookToRender)
    });
 
+    
+
    let groupedBooks = groupBy(books, 'first_publish_year');
    let years = Object.keys(groupedBooks).sort((year1, year2) => year2 - year1);
    let bookData = years.map(year => ({ year, books: groupedBooks[year] }));
@@ -38,7 +42,14 @@ export const Nav = () => {
    }
 
  return (
-         <div className={styles.list}>  
+      <div className={styles.textBoxContainer}>
+         <div className={styles.description}>
+           <div className={styles.list}>  
+            <h1 className={styles.name}>Simple Book List Maker by Irina S. </h1>
+            <p className={styles.paragraph}>This is a project that displays books based on the genre and when clicked it retrieves the list of books for that genre.<br>
+                 </br>It is created using ReactJS and OpenLibraryAPI.</p>
+                 </div>
+         <div>
             <nav className={styles.listButtons}>
                <button type="button" className={cn(styles.navButton, styles.navListItem1)} onClick={() => getBookData('cooking')}>cooking</button> 
                <button type="button" className={cn(styles.navButton, styles.navListItem2)} onClick={() => getBookData('horror')}>horror</button>
@@ -47,9 +58,17 @@ export const Nav = () => {
                <button type="button" className={cn(styles.navButton, styles.navListItem5)} onClick={() => getBookData('personal_development')}>personal development</button>
                <button type="button" className={cn(styles.navButton, styles.navListItem6)} onClick={() => getBookData('romance')}>romance</button>
                <button type="button" className={cn(styles.navButton, styles.navListItem7)} onClick={() => getBookData('sci-fi')}>sci-fi</button>
-               <div className={styles.text}>uses OpenLibrary API</div>
-            </nav>
+               <const genreButton />  
 
+            </nav>
+            <button
+                style={{ backgroundColor: selected ? '#000000' : '#ffffff' }}
+                onClick={() => setSelected(!selected)}
+             >
+              {genre}
+           </button>
+         </div>
+      </div>
             <div className={styles.listBook}>
                 {bookLists?.length > 0 &&
                 bookLists?.map((book, index) => {
@@ -70,6 +89,7 @@ export const Nav = () => {
                             /> 
                         ) :  <div className={styles.bookCoverContainer}></div>} 
                       </div>
+                      <button className={styles.bookButton}>+</button>
                       <div className={styles.title}>{book.title} </div>
                       {book.authors?.map((author) => {
                         return (
