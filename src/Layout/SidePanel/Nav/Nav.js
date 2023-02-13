@@ -1,7 +1,7 @@
 import React from "react";
 import styles from '../../SidePanel/Nav/styles.module.scss';
 import { useState } from 'react';
-import Axios, { all } from 'axios';
+import Axios from 'axios';
 import cn from 'classnames'
 
 const groupBy = (list, key) => {
@@ -51,6 +51,7 @@ export const Nav = ({genre}) => {
                  </div>
          <div>
             <nav className={styles.listButtons}>
+           
                <button type="button" className={cn(styles.navButton, styles.navListItem1)} onClick={() => getBookData('cooking')}>cooking</button> 
                <button type="button" className={cn(styles.navButton, styles.navListItem2)} onClick={() => getBookData('horror')}>horror</button>
                <button type="button" className={cn(styles.navButton, styles.navListItem3)} onClick={() => getBookData('fantasy')}>fantasy</button>
@@ -58,15 +59,9 @@ export const Nav = ({genre}) => {
                <button type="button" className={cn(styles.navButton, styles.navListItem5)} onClick={() => getBookData('personal_development')}>personal development</button>
                <button type="button" className={cn(styles.navButton, styles.navListItem6)} onClick={() => getBookData('romance')}>romance</button>
                <button type="button" className={cn(styles.navButton, styles.navListItem7)} onClick={() => getBookData('sci-fi')}>sci-fi</button>
-               <const genreButton />  
 
             </nav>
-            <button
-                style={{ backgroundColor: selected ? '#000000' : '#ffffff' }}
-                onClick={() => setSelected(!selected)}
-             >
-              {genre}
-           </button>
+            
          </div>
       </div>
             <div className={styles.listBook}>

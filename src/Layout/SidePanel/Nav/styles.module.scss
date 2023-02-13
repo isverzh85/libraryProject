@@ -17,7 +17,10 @@
 .listButtons{
     width:25%;
     height: 1000vh;
+
 }
+
+
 
 .navSidePanel{
     color: white;
@@ -45,6 +48,13 @@
     margin-top:38px;
     margin-left:47px;
 }
+
+.navButton .navListItem1.active {
+    background-color: #000;
+    color: #fff;
+  }
+
+
 
 .navListItem2{
     color: #FFD056;
