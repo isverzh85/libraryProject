@@ -11,9 +11,9 @@ const groupBy = (list, key) => {
    }, {});
  };
 
-export const Nav = ({genre}) => {
+export const Nav = () => {
     const [bookLists, setBookList] = useState([]); 
-    const [selected, setSelected] = useState(false);
+
 
 
     const getBookData = async (genre) => {
@@ -39,6 +39,7 @@ export const Nav = ({genre}) => {
    let years = Object.keys(groupedBooks).sort((year1, year2) => year2 - year1);
    let bookData = years.map(year => ({ year, books: groupedBooks[year] }));
       setBookList(bookData)
+
    }
 
  return (

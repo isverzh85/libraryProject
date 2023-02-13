@@ -17,10 +17,7 @@
 .listButtons{
     width:25%;
     height: 1000vh;
-
 }
-
-
 
 .navSidePanel{
     color: white;
@@ -49,12 +46,11 @@
     margin-left:47px;
 }
 
-.navButton .navListItem1.active {
-    background-color: #000;
-    color: #fff;
+.navListItem1:hover {
+    background-color: #FF8286;
+    color: white;
+   
   }
-
-
 
 .navListItem2{
     color: #FFD056;
@@ -67,6 +63,11 @@
     margin-left: 47px;
     margin-top: 30px;
 }
+
+.navListItem2:hover {
+    background-color: #FFD056;
+    color: white;
+  }
 
 .navListItem3{
     border: 4px solid #5BD8FF ;
@@ -81,6 +82,11 @@
     margin-top: 30px;
 }
 
+.navListItem3:hover {
+    background-color: #5BD8FF;
+    color: white;
+  }
+
 .navListItem4{
     border: 4px solid #000000 ;
     box-sizing: border-box;
@@ -93,6 +99,11 @@
     margin-left: 47px;
     margin-top: 30px;
 }
+
+.navListItem4:hover {
+    background-color: #000000;
+    color: white;
+  }
 
 .navListItem5{
     border: 4px solid #FFFFFF ;
@@ -107,18 +118,28 @@
     margin-top: 30px;
 }
 
+.navListItem5:hover {
+    background-color: #FFFFFF;
+    color: black;
+  }
+
 .navListItem6{
     border: 4px solid #D38CFF;
     box-sizing: border-box;
     width: 149px;
     height: 55px;
     font-family: 'Inter', sans-serif;
-    background: #D38CFF ;
+    background: #435F53;
     color: #FFFFFF;
     border-radius:100px;
     margin-left: 47px;
     margin-top: 30px;
 }
+
+.navListItem6:hover {
+    background-color: #D38CFF;
+    color: white;
+  }
 
 .navListItem7{
     border: 4px solid #5AFF3F;
@@ -133,6 +154,11 @@
     margin-top: 30px;
     margin-bottom: 70%;
 }
+
+.navListItem7:hover {
+    background-color: #5AFF3F;
+    color: white;
+  }
 
 .title{
     color: #373737;
@@ -255,9 +281,5 @@
     color: white;
 }
 
-.book:hover .book-button {
-    display: block;
-    background-color: #000000;
-    color: #ffffff;
-    cursor: pointer;
-  }
+
+
