@@ -276,8 +276,13 @@
     margin-top: 12px;
     width:30px;
 
-
-
+    opacity: 0;
+    -webkit-transform: translate3d(0, -15px, 0);
+            transform: translate3d(0, -15px, 0);
+    
+    transition: all 150ms linear;
+    visibility: hidden;
+    pointer-events: none;
 
     box-sizing:border-box;
     position: absolute;
@@ -303,17 +308,10 @@
 
 }
 
-.book:hover .bookButton{
-    display: none;
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding: 5px 10px;
-  background-color: #FFD056;
-  color: #435F53;
-  font-family: 'Inter', sans-serif;
-  font-weight: 700;
-  font-size: 14px;
-  border-radius: 10px;
-  cursor: pointer;
+.book .bookButton:hover{
+    opacity: 1;
+    visibility: visible;
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+
 }
