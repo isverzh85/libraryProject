@@ -270,15 +270,12 @@
 .textBoxContainer{
     display: flex;
 }
+
 .bookButton{
     left:100px;
     width:30px;
     display: block;
-
-    
-    
     transition: all 150ms linear;
-
     box-sizing:border-box;
     position: relative;
     height:20px;
@@ -298,32 +295,10 @@
     color: white;
 }
 
-.book:hover .bookButton {
-    display: block;
-
-}
-
-.book .bookButton:hover{
+.book:hover{
     opacity: 1;
     visibility: visible;
     -webkit-transform: translate3d(0, 0, 0);
             transform: translate3d(0, 0, 0);
-
-}
-
-.bookButton:hover {
-    
-    width:30px;
-    display: block;
-
-    opacity: 0;
-    -webkit-transform: translate3d(0, -15px, 0);
-            transform: translate3d(0, -15px, 0);
-    
-    transition: all 150ms linear;
-    pointer-events: none;
-
     box-sizing:border-box;
-    position: relative;
-    height:20px;
 }
