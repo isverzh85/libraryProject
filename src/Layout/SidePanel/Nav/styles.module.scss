@@ -16,7 +16,7 @@
 
 .listButtons{
     width:90%;
-    height: 110vh;
+    height: 100vh;
     border-bottom: 1px solid #999999;
 }
 
@@ -275,14 +275,13 @@
     left: 44%;
     margin-top: 12px;
     width:30px;
+    display: block;
 
     opacity: 0;
     -webkit-transform: translate3d(0, -15px, 0);
             transform: translate3d(0, -15px, 0);
     
     transition: all 150ms linear;
-    visibility: hidden;
-    pointer-events: none;
 
     box-sizing:border-box;
     position: absolute;
@@ -314,4 +313,23 @@
     -webkit-transform: translate3d(0, 0, 0);
             transform: translate3d(0, 0, 0);
 
+}
+
+.bookButton:hover {
+    top: 64%;
+    left: 44%;
+    margin-top: 12px;
+    width:30px;
+    display: block;
+
+    opacity: 0;
+    -webkit-transform: translate3d(0, -15px, 0);
+            transform: translate3d(0, -15px, 0);
+    
+    transition: all 150ms linear;
+    pointer-events: none;
+
+    box-sizing:border-box;
+    position: absolute;
+    height:20px;
 }
