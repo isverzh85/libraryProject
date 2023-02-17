@@ -50,8 +50,7 @@
 .navListItem1:hover {
     background-color: #FF8286;
     color: white;
-   
-  }
+}
 
 .navListItem2{
     color: #FFD056;
@@ -185,6 +184,7 @@
     width: 116px;
     height: 200px;
     background-color: blue;
+    position:relative;
 }
 
 .year{
@@ -205,7 +205,7 @@
 .book{
     display: inline-block;
     margin-top:5px;
-    margin-bottom:15px;
+    position:relative;
 }
 
 .text{
@@ -271,9 +271,7 @@
     display: flex;
 }
 .bookButton{
-    top: 64%;
-    left: 44%;
-    margin-top: 12px;
+    left:100px;
     width:30px;
     display: block;
 
@@ -282,7 +280,7 @@
     transition: all 150ms linear;
 
     box-sizing:border-box;
-    position: absolute;
+    position: relative;
     height:20px;
     background:#6BAEC4;
     border:1px solid #35689C;
@@ -328,6 +326,6 @@
     pointer-events: none;
 
     box-sizing:border-box;
-    position: absolute;
+    position: relative;
     height:20px;
 }
