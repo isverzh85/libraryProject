@@ -282,6 +282,7 @@
     background:#6BAEC4;
     border:1px solid #35689C;
     color: white;
+    opacity: 0;
 }
 
 .separateNav{
@@ -297,8 +298,9 @@
 
 .book:hover{
     opacity: 1;
+    
     visibility: visible;
     -webkit-transform: translate3d(0, 0, 0);
-            transform: translate3d(0, 0, 0);
+           transform: translate3d(0, 0, 0);
     box-sizing:border-box;
 }
