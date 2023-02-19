@@ -1,8 +1,11 @@
 import React from "react";
 import styles from '../../SidePanel/Nav/styles.module.scss';
+import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import Axios from 'axios';
-import cn from 'classnames'
+import cn from 'classnames';
+//import MyBookList from '../../../components/Buttons/MyBookList/MyBookList';
+
 
 const groupBy = (list, key) => {
    return list.reduce((result, item) => {
@@ -60,7 +63,10 @@ export const Nav = () => {
                <button type="button" className={cn(styles.navButton, styles.navListItem5)} onClick={() => getBookData('personal_development')}>personal development</button>
                <button type="button" className={cn(styles.navButton, styles.navListItem6)} onClick={() => getBookData('romance')}>romance</button>
                <button type="button" className={cn(styles.navButton, styles.navListItem7)} onClick={() => getBookData('sci-fi')}>sci-fi</button>
-               <button type="button" className={cn(styles.navButton, styles.separateNav)}>View My Book List</button>
+               
+              <Link to= '/my-book-list' type="button" className={cn(styles.navButton, styles.separateNav)}>View My Book List</Link>
+               
+               
             </nav>
             
          </div>
@@ -85,7 +91,7 @@ export const Nav = () => {
                             /> 
                         ) :  <div className={styles.bookCoverContainer}></div>} 
                       </div>
-                      <div className={styles.bookButton}>+</div>
+                      <button className={styles.bookButton}>+</button>
                       <div className={styles.title}>{book.title} </div>
                       {book.authors?.map((author) => {
                         return (

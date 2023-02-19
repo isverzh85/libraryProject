@@ -16,7 +16,7 @@
 
 .listButtons{
     width:90%;
-    height: 100vh;
+    height: 120vh;
     border-bottom: 1px solid #999999;
 }
 
@@ -184,7 +184,6 @@
     width: 116px;
     height: 200px;
     background-color: blue;
-    position:relative;
 }
 
 .year{
@@ -272,17 +271,14 @@
 }
 
 .bookButton{
-    left:100px;
     width:30px;
-    display: block;
     transition: all 150ms linear;
     box-sizing:border-box;
-    position: relative;
     height:20px;
     background:#6BAEC4;
     border:1px solid #35689C;
     color: white;
-    opacity: 0;
+    
 }
 
 .separateNav{
@@ -296,11 +292,9 @@
     color: white;
 }
 
-.book:hover{
-    opacity: 1;
-    
-    visibility: visible;
-    -webkit-transform: translate3d(0, 0, 0);
-           transform: translate3d(0, 0, 0);
-    box-sizing:border-box;
-}
+.book:hover .bookButton{
+    display: block;    
+
+    opacity: 0.7;
+    filter: brightness(75%);
+  }
