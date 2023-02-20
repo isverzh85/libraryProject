@@ -64,7 +64,7 @@ export const Nav = () => {
                <button type="button" className={cn(styles.navButton, styles.navListItem6)} onClick={() => getBookData('romance')}>romance</button>
                <button type="button" className={cn(styles.navButton, styles.navListItem7)} onClick={() => getBookData('sci-fi')}>sci-fi</button>
                
-              <Link to= '/my-book-list' type="button" className={cn(styles.navButton, styles.separateNav)}>View My Book List</Link>
+              {/* <Link to= '/my-book-list' type="button" className={cn(styles.navButton, styles.separateNav)}>View My Book List</Link> */}
                
                
             </nav>
@@ -91,7 +91,7 @@ export const Nav = () => {
                             /> 
                         ) :  <div className={styles.bookCoverContainer}></div>} 
                       </div>
-                      <button className={styles.bookButton}>+</button>
+                      <button className={styles.bookButton} onClick={() => getBookData()}>+</button>
                       <div className={styles.title}>{book.title} </div>
                       {book.authors?.map((author) => {
                         return (
