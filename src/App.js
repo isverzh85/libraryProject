@@ -1,5 +1,6 @@
 import Home from './Layout/SidePanel/Nav/Nav';
 import Button from './components/Buttons/index';
+import MyBookList from './components/Buttons/MyBookList/MyBookList';
 import './Layout/SidePanel/Nav/styles.module.scss'
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
       <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100&display=swap" rel="stylesheet"/>
          <Home />
          <Button />
+         <MyBookList />
       </header>
     </div>
   
