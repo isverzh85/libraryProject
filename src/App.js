@@ -15,7 +15,6 @@ function App() {
          <MyBookList />
       </header>
     </div>
-  
   );
 }
 

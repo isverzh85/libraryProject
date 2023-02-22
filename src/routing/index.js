@@ -1,18 +1,23 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
-import MyBookList from './MyBookList';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import TheBookList from './TheBookList';
+import Nav from '../Layout/SidePanel/Nav/Nav';
 
 function App() {
     return (
-        <Router>
+       <BrowserRouter>
         <Switch>
-           <Route path="/my-book-list" component={MyBookList} />
+           <Route path="/my-book-list" />
+           <TheBookList/>
+             
            <Route path="/"  />
+           <Nav/>
+             
+           
         </Switch>
-    </Router>
+       </BrowserRouter>
+ 
   );
 }
 
 export default App;
-
-
