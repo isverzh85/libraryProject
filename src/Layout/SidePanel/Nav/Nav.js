@@ -1,6 +1,6 @@
 import React from "react";
 import styles from '../../SidePanel/Nav/styles.module.scss';
- import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import Axios from 'axios';
 import cn from 'classnames';
@@ -17,9 +17,6 @@ const groupBy = (list, key) => {
 export const Nav = () => {
     const [bookLists, setBookList] = useState([]); 
     const [myBookList, setMyBookList] = useState([]);
-
-
-
 
     const getBookData = async (genre) => {
     let books = [];
@@ -38,14 +35,15 @@ export const Nav = () => {
         books.push(bookToRender)
    });
 
-    
-
    let groupedBooks = groupBy(books, 'first_publish_year');
    let years = Object.keys(groupedBooks).sort((year1, year2) => year2 - year1);
    let bookData = years.map(year => ({ year, books: groupedBooks[year] }));
       setBookList(bookData)
-
    }
+
+   myBookList.push = (book) => {
+      setMyBookList(prevState => [...prevState, book]);
+  }
 
  return (
       <div className={styles.textBoxContainer}>
@@ -91,7 +89,7 @@ export const Nav = () => {
                             /> 
                         ) :  <div className={styles.bookCoverContainer}></div>} 
                       </div>
-                      <button className={styles.bookButton} onClick={() => getBookData(book.title, book.cover_url, book.first_publish_year)}>+</button>
+                      <button className={styles.bookButton} onClick={() => setMyBookList(book.title, book.cover_url, book.first_publish_year)}>+</button>
 
                       <div className={styles.title}>{book.title} </div>
                       {book.authors?.map((author) => {
