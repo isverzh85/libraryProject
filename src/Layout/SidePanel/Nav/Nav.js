@@ -39,11 +39,10 @@ export const Nav = () => {
    let years = Object.keys(groupedBooks).sort((year1, year2) => year2 - year1);
    let bookData = years.map(year => ({ year, books: groupedBooks[year] }));
       setBookList(bookData)
+      setMyBookList(prevState => [...prevState, books]);
    }
 
-   myBookList.push = (book) => {
-      setMyBookList(prevState => [...prevState, book]);
-  }
+  
 
  return (
       <div className={styles.textBoxContainer}>
@@ -63,7 +62,9 @@ export const Nav = () => {
                <button type="button" className={cn(styles.navButton, styles.navListItem5)} onClick={() => getBookData('personal_development')}>personal development</button>
                <button type="button" className={cn(styles.navButton, styles.navListItem6)} onClick={() => getBookData('romance')}>romance</button>
                <button type="button" className={cn(styles.navButton, styles.navListItem7)} onClick={() => getBookData('sci-fi')}>sci-fi</button>
-               <button type="button" className={cn(styles.navButton, styles.separateNav)}><Link to="/my-book-list">View My Book List</Link></button>     
+               <Link to="/my-book-list">
+               <button type="button" className={cn(styles.navButton, styles.separateNav)}>View My Book List</button>     
+               </Link>
 
             </nav>
             
@@ -89,7 +90,8 @@ export const Nav = () => {
                             /> 
                         ) :  <div className={styles.bookCoverContainer}></div>} 
                       </div>
-                      <button className={styles.bookButton} onClick={() => setMyBookList(book.title, book.cover_url, book.first_publish_year)}>+</button>
+                          <button className={styles.bookButton}>+</button>
+
 
                       <div className={styles.title}>{book.title} </div>
                       {book.authors?.map((author) => {

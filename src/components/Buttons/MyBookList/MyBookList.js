@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import styles from '../MyBookList/styles.module.scss';
 import Axios from 'axios';
-import Nav from '../../../Layout/SidePanel/Nav/Nav';
 
 const MyBookList = ({ books }) => {
   return (
@@ -18,6 +17,8 @@ const MyBookList = ({ books }) => {
 };
 
 const TheBookList = () => {
+    const [book, setBook] = useState([]);
+
   const [bookList, setBookList] = useState([]);
 
   const updateBookData = async (title, cover_url, year, genre) => {
@@ -29,21 +30,17 @@ const TheBookList = () => {
       cover_url: cover_url,
       year: year
     };
+
     setBookList([...bookList, book]);
   };
 
   return (
-    <Nav>
       <div className={styles.myBookListContainer}>
         <h1>My Book List</h1>
-
         <button className={styles.importButton}>Export to CSV</button>
-
         <MyBookList books={bookList} />
-
         <div className={styles.bookContainer}></div>
-      </div>
-    </Nav>
+      </div> 
   );
 };
 
