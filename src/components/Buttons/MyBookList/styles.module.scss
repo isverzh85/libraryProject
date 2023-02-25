@@ -1,9 +1,37 @@
-.importButton{
-    box-sizing: border-box;
-    position: absolute;
-    width: 193px;
-    height: 55px;
-    left: 806px;
-    top: 27px;
+.bookContainer{
+    width: 260px;
+    height:53px;
+    margin-left:560px;
+    margin-top:30px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size:44px;
+    line-height: 53.25px;
+    color: #373737;
+}
 
+.myBookListContainer{
+   display:flex;
+   transform:translateX(2%);
+}
+
+.mainContainer{
+    transform:translate(12px, -1140px);
+    margin-top:5px;
+    padding-top:5px;
+}
+
+.importButton{
+    width:151px;
+    height:40px;
+    margin-top: 40px;
+    margin-left: 15px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size:20px;
+    line-height: 24px;
+    color: #35689C;
+    box-sizing: border-box;
+    border: 4px solid #35689C;
+    border-radius: 100px;
 }

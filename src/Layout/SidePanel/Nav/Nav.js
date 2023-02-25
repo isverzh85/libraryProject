@@ -1,6 +1,5 @@
 import React from "react";
 import styles from '../../SidePanel/Nav/styles.module.scss';
-import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import Axios from 'axios';
 import cn from 'classnames';
@@ -62,9 +61,9 @@ export const Nav = () => {
                <button type="button" className={cn(styles.navButton, styles.navListItem5)} onClick={() => getBookData('personal_development')}>personal development</button>
                <button type="button" className={cn(styles.navButton, styles.navListItem6)} onClick={() => getBookData('romance')}>romance</button>
                <button type="button" className={cn(styles.navButton, styles.navListItem7)} onClick={() => getBookData('sci-fi')}>sci-fi</button>
-               <Link to="/my-book-list">
+               <a href ="/my-book-list">
                <button type="button" className={cn(styles.navButton, styles.separateNav)}>View My Book List</button>     
-               </Link>
+               </a>
 
             </nav>
             
