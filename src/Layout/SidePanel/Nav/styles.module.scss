@@ -47,10 +47,10 @@
     width: 178px;
     height: 55px;
     margin-top:38px;
-    margin-left:47px;
+    margin-left:79px;
 }
 
-.navListItem1:hover {
+.navListItem1:active, .navListItem1:focus, .navListItem1:hover {
     background-color: #FF8286;
     color: white;
 }
@@ -63,11 +63,11 @@
     box-sizing: border-box;
     width: 149px;
     height: 55px;
-    margin-left: 47px;
+    margin-left: 79px;
     margin-top: 30px;
 }
 
-.navListItem2:hover {
+.navListItem2:active, .navListItem2:focus, .navListItem2:hover {
     background-color: #FFD056;
     color: white;
   }
@@ -81,11 +81,11 @@
     color: #5BD8FF;
     background: #435F53;
     border-radius:100px;
-    margin-left: 47px;
+    margin-left: 79px;
     margin-top: 30px;
 }
 
-.navListItem3:hover {
+.navListItem3:active, .navListItem3:focus, .navListItem3:hover {
     background-color: #5BD8FF;
     color: white;
   }
@@ -99,11 +99,11 @@
     color: #000000;
     background: #435F53;
     border-radius:100px;
-    margin-left: 47px;
+    margin-left: 79px;
     margin-top: 30px;
 }
 
-.navListItem4:hover {
+.navListItem4:active, .navListItem4:focus, .navListItem4:hover {
     background-color: #000000;
     color: white;
   }
@@ -117,11 +117,11 @@
     color: #FFFFFF;
     background: #435F53;
     border-radius:100px;
-    margin-left: 47px;
+    margin-left: 79px;
     margin-top: 30px;
 }
 
-.navListItem5:hover {
+.navListItem5:active, .navListItem5:focus, .navListItem5:hover {
     background-color: #FFFFFF;
     color: black;
 }
@@ -135,13 +135,13 @@
     background: #435F53;
     color: #D38CFF;
     border-radius:100px;
-    margin-left: 47px;
+    margin-left: 79px;
     margin-top: 30px;
 }
 
-.navListItem6:hover {
+.navListItem6:active, .navListItem6:focus,.navListItem6:hover {
     background-color: #D38CFF;
-    color: #D38CFF;
+    color: white;
   }
 
 .navListItem7{
@@ -153,12 +153,12 @@
     color: #5AFF3F;
     background: #435F53;
     border-radius:100px;
-    margin-left: 47px;
+    margin-left: 79px;
     margin-top: 30px;
     margin-bottom: 70%;
 }
 
-.navListItem7:hover {
+.navListItem7:active, .navListItem7:focus, .navListItem7:hover {
     background-color: #5AFF3F;
     color: white;
   }
@@ -271,6 +271,10 @@
     margin-left:30px;
 }
 
+.paragraph strong {
+    font-weight: bold;
+  }
+
 .textBoxContainer{
     display: flex;
 }
@@ -292,15 +296,13 @@
     width: 331px;
     height:55px;
     top: 871px;
-    left: 49px;
+    margin-left: 79px;
     border-radius:100px;
     border: 4px solid #00F4BA;
     color: #00F4BA;
     background-size:cover;
     background-color: #435F53;
-
 }
-
 
 .bookContainer:hover > .bookButton {
     opacity:1;
@@ -308,5 +310,3 @@
     color: #fff;
     cursor: pointer;
   }
-
-  

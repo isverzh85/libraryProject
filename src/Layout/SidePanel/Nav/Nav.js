@@ -49,7 +49,7 @@ export const Nav = () => {
            <div className={styles.list}>  
             <h1 className={styles.name}>Simple Book List Maker by Irina S. </h1>
             <p className={styles.paragraph}>This is a project that displays books based on the genre and when clicked it retrieves the list of books for that genre.<br>
-                 </br>It is created using ReactJS and OpenLibraryAPI.</p>
+                 </br>It is created using <strong>ReactJS</strong> and <strong>OpenLibraryAPI</strong>.</p>
                  </div>
          <div>
             <nav className={styles.listButtons}>
