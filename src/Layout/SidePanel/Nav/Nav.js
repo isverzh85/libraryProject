@@ -3,6 +3,7 @@ import styles from '../../SidePanel/Nav/styles.module.scss';
 import { useState } from 'react';
 import Axios from 'axios';
 import cn from 'classnames';
+import logo from './logo.png'
 //import MyBookList from '../../../components/Buttons/MyBookList/MyBookList';
 
 
@@ -62,8 +63,9 @@ export const Nav = () => {
                <button type="button" className={cn(styles.navButton, styles.navListItem6)} onClick={() => getBookData('romance')}>romance</button>
                <button type="button" className={cn(styles.navButton, styles.navListItem7)} onClick={() => getBookData('sci-fi')}>sci-fi</button>
                <a href ="/my-book-list">
+               <img src={logo} alt="logo" className={styles.logo}/>
+
                <button type="button" className={cn(styles.navButton, styles.separateNav)}>View My Book List
-               <img src="./logo.png"/>
 
                </button>  
                </a>
