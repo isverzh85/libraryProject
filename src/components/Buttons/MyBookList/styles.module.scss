@@ -1,6 +1,6 @@
 .bookContainer{
     height:53px;
-    margin-left:560px;
+    margin-left:700px;
     margin-top:30px;
     font-family: 'Inter', sans-serif;
     font-weight: 700;
@@ -15,7 +15,7 @@
 }
 
 .mainContainer{
-    transform:translate(-180px, -740px);
+   display:flex;
 }
 
 .importButton{
