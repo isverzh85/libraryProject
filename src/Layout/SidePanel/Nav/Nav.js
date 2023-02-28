@@ -65,7 +65,7 @@ export const Nav = () => {
                <a href ="/my-book-list">
                <img src={logo} alt="logo" className={styles.logo}/>
 
-               <button type="button" className={cn(styles.navButton, styles.separateNav)}>View My Book List
+               <button type="button" className={cn(styles.navButton, styles.separateNav)}>View my book list
 
                </button>  
                </a>
