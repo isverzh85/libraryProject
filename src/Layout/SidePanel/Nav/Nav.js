@@ -62,7 +62,10 @@ export const Nav = () => {
                <button type="button" className={cn(styles.navButton, styles.navListItem6)} onClick={() => getBookData('romance')}>romance</button>
                <button type="button" className={cn(styles.navButton, styles.navListItem7)} onClick={() => getBookData('sci-fi')}>sci-fi</button>
                <a href ="/my-book-list">
-               <button type="button" className={cn(styles.navButton, styles.separateNav)}>View My Book List</button>     
+               <button type="button" className={cn(styles.navButton, styles.separateNav)}>View My Book List
+               <img src="./logo.png"/>
+
+               </button>  
                </a>
 
             </nav>

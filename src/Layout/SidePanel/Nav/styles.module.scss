@@ -290,7 +290,9 @@
     box-sizing:border-box;
     border-radius:30px;
     transition: opacity 0.3s ease-in-out, background-color 0.3s ease-in-out;
-    margin-left:165px;
+    margin-left:-5px;
+    margin-top:220px;
+    position:absolute;
 }
 
 .separateNav{
