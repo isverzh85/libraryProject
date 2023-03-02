@@ -1,28 +1,28 @@
 .list{
     width:370px;
     height: 200px;
-    margin-left:24px;
     border-radius:10px;
     background:rgba(0, 0, 0, 0.3);
-    margin:7px  4px 2px;
-    padding:4px 10px 10px 10px;
+    margin:7px  34px 2px;
+    padding:4px 20px 20px 10px;
 }
 
 .description{
     background:#435F53;
     padding:30px;
-    width:30%;
+    width:27%;
     height: 210vh;
 
 }
 
 .listButtons{
     width:70%;
-    height: 100vh;
+    height: 70vh;
     border-bottom: 1px solid #999999;
     display:grid;
     justify-content:center;
     align-items:center;
+    margin-left:50px;
 }
 
 .navSidePanel{
@@ -66,7 +66,7 @@
     width: 149px;
     height: 55px;
     margin-left: 79px;
-    margin-top: 30px;
+    margin-top: 15px;
 }
 
 .navListItem2:active, .navListItem2:focus, .navListItem2:hover {
@@ -84,7 +84,7 @@
     background: #435F53;
     border-radius:100px;
     margin-left: 79px;
-    margin-top: 30px;
+    margin-top: 15px;
 }
 
 .navListItem3:active, .navListItem3:focus, .navListItem3:hover {
@@ -102,7 +102,7 @@
     background: #435F53;
     border-radius:100px;
     margin-left: 79px;
-    margin-top: 30px;
+    margin-top: 15px;
 }
 
 .navListItem4:active, .navListItem4:focus, .navListItem4:hover {
@@ -120,7 +120,7 @@
     background: #435F53;
     border-radius:100px;
     margin-left: 79px;
-    margin-top: 30px;
+    margin-top: 15px;
 }
 
 .navListItem5:active, .navListItem5:focus, .navListItem5:hover {
@@ -138,7 +138,7 @@
     color: #D38CFF;
     border-radius:100px;
     margin-left: 79px;
-    margin-top: 30px;
+    margin-top: 15px;
 }
 
 .navListItem6:active, .navListItem6:focus,.navListItem6:hover {
@@ -156,8 +156,8 @@
     background: #435F53;
     border-radius:100px;
     margin-left: 79px;
-    margin-top: 30px;
-    margin-bottom: 70%;
+    margin-top: 15px;
+    margin-bottom: 30%;
 }
 
 .navListItem7:active, .navListItem7:focus, .navListItem7:hover {

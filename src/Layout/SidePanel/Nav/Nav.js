@@ -94,7 +94,7 @@ export const Nav = () => {
                             /> 
                         ) :  <div className={styles.bookCoverContainer}></div>} 
                       </div>
-                          <button className={styles.bookButton}>+</button>
+                          <button className={styles.bookButton} onClick={()=>{}}>+</button>
 
 
                       <div className={styles.title}>{book.title} </div>
