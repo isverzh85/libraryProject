@@ -5,13 +5,17 @@
     background:rgba(0, 0, 0, 0.3);
     margin:7px 14px 2px;
     padding:4px 20px 20px 10px;
+    overflow-y: scroll;
+
 }
 
 .description{
     background:#435F53;
     padding:30px;
     width:25%;
-    height: 210vh;
+    height: 110vh;
+    overflow-y: scroll;
+
 }
 
 .listButtons{
