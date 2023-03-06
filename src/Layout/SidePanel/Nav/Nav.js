@@ -1,6 +1,6 @@
 import React from "react";
 import styles from '../../SidePanel/Nav/styles.module.scss';
-import { useState } from 'react';
+import { useState,  useContext } from 'react';
 import Axios from 'axios';
 import cn from 'classnames';
 import logo from './logo.png'
@@ -14,7 +14,7 @@ const groupBy = (list, key) => {
    }, {});
  };
 
- const Book = ({ book, addToMyBookList}) => {
+ const BookContext = ({ book, addToMyBookList}) => {
    const { title, authors, cover_url } = book;
    const handleAddToMyBookList = () => {
     addToMyBookList(book);
@@ -96,7 +96,7 @@ export const Nav = () => {
                             /> 
                         ) :  <div className={styles.bookCoverContainer}></div>} 
                       </div>
-                          {/* <button className={styles.bookButton} onClick={()=> {handleAddToMyBookList}}>+</button> */}
+                          <button className={styles.bookButton} >+</button>
                       <div className={styles.title}>{book.title} </div>
                        {book.authors?.map((author) => {
                          return (
