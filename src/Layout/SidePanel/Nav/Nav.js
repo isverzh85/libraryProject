@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Axios from 'axios';
 import cn from 'classnames';
 import logo from './logo.png'
-//import MyBookList from '../../../components/Buttons/MyBookList/MyBookList';
+import MyBookList from '../../../components/Buttons/MyBookList/MyBookList';
 
 
 const groupBy = (list, key) => {
@@ -14,9 +14,16 @@ const groupBy = (list, key) => {
    }, {});
  };
 
+ const Book = ({ book, addToMyBookList}) => {
+   const { title, authors, cover_url } = book;
+   const handleAddToMyBookList = () => {
+    addToMyBookList(book);
+  } 
+}
+
 export const Nav = () => {
     const [bookLists, setBookList] = useState([]); 
-    const [myBookList, setMyBookList] = useState([]);
+    const [addToBookList, setAddBookList] = useState([]);
 
     const getBookData = async (genre) => {
     let books = [];
@@ -33,16 +40,17 @@ export const Nav = () => {
         cover_id: book.cover_id
       }
         books.push(bookToRender)
+       
    });
-
+   
    let groupedBooks = groupBy(books, 'first_publish_year');
    let years = Object.keys(groupedBooks).sort((year1, year2) => year2 - year1);
    let bookData = years.map(year => ({ year, books: groupedBooks[year] }));
       setBookList(bookData)
-      setMyBookList(prevState => [...prevState, books]);
    }
 
-  
+   
+   
 
  return (
       <div className={styles.textBoxContainer}>
@@ -64,20 +72,14 @@ export const Nav = () => {
                <button type="button" className={cn(styles.navButton, styles.navListItem7)} onClick={() => getBookData('sci-fi')}>sci-fi</button>
                <a href ="/my-book-list">
                <img src={logo} alt="logo" className={styles.logo}/>
-
-               <button type="button" className={cn(styles.navButton, styles.separateNav)}>View my book list
-
-               </button>  
+               <button type="button" className={cn(styles.navButton, styles.separateNav)}>View my book list</button>  
                </a>
-
-            </nav>
-            
+            </nav>  
          </div>
       </div>
             <div className={styles.listBook}>
                 {bookLists?.length > 0 &&
                 bookLists?.map((book, index) => {
-
             return (
               <div className={styles.mainContainer}>
                   <h2 className={styles.year}>{book.year}</h2>
@@ -94,20 +96,18 @@ export const Nav = () => {
                             /> 
                         ) :  <div className={styles.bookCoverContainer}></div>} 
                       </div>
-                          <button className={styles.bookButton} onClick={()=>{}}>+</button>
-
-
+                          {/* <button className={styles.bookButton} onClick={()=> {handleAddToMyBookList}}>+</button> */}
                       <div className={styles.title}>{book.title} </div>
-                      {book.authors?.map((author) => {
-                        return (
-                          <div className={styles.author}>{author.name}</div>
+                       {book.authors?.map((author) => {
+                         return (
+                           <div className={styles.author}>{author.name}</div>
                         );
                       })}
                     </div>
                   );
                 })}
-                </div>
-              </div>
+               </div>
+            </div>
             );
           })}
       </div>
