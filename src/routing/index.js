@@ -6,14 +6,16 @@ import Nav from '../Layout/SidePanel/Nav/Nav';
 function Routes() {
   return (
     <Router>
-        <Switch>
-          <Route path="/my-book-list">
-          <MyBookList />
-          </Route>
-          <Route path="/"/>
-          <Nav /> 
-        <Route />  
-      </Switch>
+        <div>
+          <Switch>
+             <Route path="/my-book-list">
+               <MyBookList />
+             </Route>
+             <Route path="/">
+             <Nav key = "nav" />
+            </Route>  
+          </Switch>
+        </div>
     </Router>
   );
 }

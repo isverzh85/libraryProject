@@ -14,16 +14,13 @@ const groupBy = (list, key) => {
    }, {});
  };
 
- const BookContext = ({ book, addToMyBookList}) => {
-   const { title, authors, cover_url } = book;
-   const handleAddToMyBookList = () => {
-    addToMyBookList(book);
-  } 
-}
 
 export const Nav = () => {
     const [bookLists, setBookList] = useState([]); 
-    const [addToBookList, setAddBookList] = useState([]);
+    const [addBookList, setAddBookList] = useState([]);
+
+    const MyBookListContext = React.createContext();
+
 
     const getBookData = async (genre) => {
     let books = [];
@@ -49,9 +46,12 @@ export const Nav = () => {
       setBookList(bookData)
    }
 
-   
-   
+   const handleAddBook = (book) => {
+    setAddBookList((prevList) => [...prevList, book]);
+  };
+  
 
+   
  return (
       <div className={styles.textBoxContainer}>
          <div className={styles.description}>
@@ -61,8 +61,7 @@ export const Nav = () => {
                  </br>It is created using <strong>ReactJS</strong> and <strong>OpenLibraryAPI</strong>.</p>
                  </div>
          <div>
-            <nav className={styles.listButtons}>
-           
+            <nav className={styles.listButtons}>        
                <button type="button" className={cn(styles.navButton, styles.navListItem1)} onClick={() => getBookData('cooking')}>cooking</button> 
                <button type="button" className={cn(styles.navButton, styles.navListItem2)} onClick={() => getBookData('horror')}>horror</button>
                <button type="button" className={cn(styles.navButton, styles.navListItem3)} onClick={() => getBookData('fantasy')}>fantasy</button>
@@ -84,9 +83,10 @@ export const Nav = () => {
               <div className={styles.mainContainer}>
                   <h2 className={styles.year}>{book.year}</h2>
               <div className={styles.listOfBooks}>
-                   {book.books?.map((book, index) => {
+                   {book.books && book.books?.map((book, index) => {
                   return (
-                    <div className={styles.bookContainer}>
+                    <MyBookListContext.Provider value={{ addBookList, setAddBookList }}>
+                    <div key={book.id} className={styles.bookContainer}>
                       <div className={styles.book}>
                         {book.cover_id? (
                             <img
@@ -96,14 +96,15 @@ export const Nav = () => {
                             /> 
                         ) :  <div className={styles.bookCoverContainer}></div>} 
                       </div>
-                          <button className={styles.bookButton} >+</button>
+                          <button className={styles.bookButton} onClick={()=> {handleAddBook(book)}} >+</button>
                       <div className={styles.title}>{book.title} </div>
                        {book.authors?.map((author) => {
                          return (
                            <div className={styles.author}>{author.name}</div>
                         );
                       })}
-                    </div>
+                   </div>
+                </MyBookListContext.Provider>
                   );
                 })}
                </div>
