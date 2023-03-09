@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import MyBookList from '../components/Buttons/MyBookList/MyBookList';
-import Nav from '../Layout/SidePanel/Nav/Nav';
+import MyBookList from '../components/Navigation/MyBookList/MyBookList';
+import Nav from '../Pages/SidePanel/Nav/Nav';
 
 function Routes() {
   return (

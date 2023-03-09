@@ -1,11 +1,18 @@
 import React from "react";
-import styles from '../../SidePanel/Nav/styles.module.scss';
-import { useContext } from 'react';
-import BookListContext from '../../../context/index';
+import styles from './styles.module.scss';
+import { useState, useContext } from 'react';
+import BookListContext from '../../../components/BookListIndex/index';
 
 
 export const BookLists = () => {
+  const [addBookList, setAddBookList] = useState([]);
+
     const bookLists = useContext(BookListContext)
+
+    const handleAddBook = (book) => {
+      setAddBookList((prevList) => [...prevList, book]);
+    };
+    
     return (
         <div className={styles.listBook}>
         {bookLists?.length > 0 &&
@@ -29,7 +36,7 @@ export const BookLists = () => {
                     /> 
                 ) :  <div className={styles.bookCoverContainer}></div>} 
               </div>
-                  {/* <button className={styles.bookButton} onClick={()=> {handleAddBook(book)}} >+</button> */}
+                   <button className={styles.bookButton} onClick={()=> {handleAddBook(book)}} >+</button> 
               <div className={styles.title}>{book.title} </div>
                {book.authors?.map((author) => {
                  return (

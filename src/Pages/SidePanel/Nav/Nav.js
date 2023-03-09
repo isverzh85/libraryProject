@@ -1,12 +1,12 @@
 import React from "react";
-import styles from '../../SidePanel/Nav/styles.module.scss';
+import styles from './styles.module.scss';
 import { useState,  useContext } from 'react';
 import Axios from 'axios';
 import cn from 'classnames';
-import logo from './logo.png'
-import MyBookList from '../../../components/Buttons/MyBookList/MyBookList';
-// import { BookListContext } from "../../../context";
-// import { BookLists } from "./BookLists";
+import logo from '../../../assets/logo.png';
+import MyBookList from '../../MyBookList/MyBookList';
+import BookContext from '../../../components/BookListIndex/index';
+import BookLists  from "./BookLists";
 
 const groupBy = (list, key) => {
    return list.reduce((result, item) => {
@@ -77,12 +77,10 @@ export const Nav = () => {
             </nav>  
          </div>
       </div>
-      {/* <BookListContext.Provider value={bookLists}> */}
- {/* <BookLists> */}
-
- {/* </BookLists> */}
-            
-      {/* </BookListContext.Provider> */}
+       <MyBookListContext.Provider value={bookLists}>  
+        <BookLists> 
+       </BookLists> 
+     </MyBookListContext.Provider>  
     </div>
  )};
  

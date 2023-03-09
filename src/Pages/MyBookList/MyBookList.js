@@ -1,32 +1,24 @@
 import React, { useState, useContext } from 'react';
-
 import styles from '../MyBookList/styles.module.scss';
-
-
+import BookContext from '../../components/BookListIndex/index';
 
 export const MyBookList = ({myBookList}) => {
   const [newBook, setNewBook] = useState({});
-
-  const { addBookList } = useContext();
+  const { addBookList } = useContext(BookContext);
 
   const handleAddBook = () => {
     if (newBook.title && newBook.cover_url) {
-      setNewBook([...myBookList, newBook]);
+      setNewBook({ ...addBookList, newBook });
       setNewBook({});
     }
   }; 
-
-  // handleAddBook is for adding the book from the nav
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setNewBook({ ...newBook, [name]: value });
   };
 
-  // would be for the changes
-
-
-  return (
+return (
       <div className={styles.mainContainer}>
         <h1 className={styles.bookContainer}>My book list</h1>
         <ul>
@@ -38,15 +30,11 @@ export const MyBookList = ({myBookList}) => {
           </li>
         ))}
       </ul>
-      
-    
           <div className={styles.addBookContainer}>
             <button className={styles.importButton}>Export to CSV</button>
           </div>
       </div> 
-  
   );
 }
 
 export default MyBookList;
-
