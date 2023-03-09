@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import MyBookList from '../components/Navigation/MyBookList/MyBookList';
-import Nav from '../Pages/SidePanel/Nav/Nav';
+import MyBookList from '../Pages/MyBookList/MyBookList';
+import Nav from '../Pages/Home/Nav';
 
 function Routes() {
   return (
@@ -12,7 +12,7 @@ function Routes() {
                <MyBookList />
              </Route>
              <Route path="/">
-             <Nav key = "nav" />
+              <Nav key = "nav" />
             </Route>  
           </Switch>
         </div>

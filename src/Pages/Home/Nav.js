@@ -3,10 +3,11 @@ import styles from './styles.module.scss';
 import { useState,  useContext } from 'react';
 import Axios from 'axios';
 import cn from 'classnames';
-import logo from '../../../assets/logo.png';
-import MyBookList from '../../MyBookList/MyBookList';
-import BookContext from '../../../components/BookListIndex/index';
-import BookLists  from "./BookLists";
+import logo from '../../assets/logo.png';
+import BookListContext from '../../components/BookListIndex/index';
+// import MyBookList from '../../MyBookList/MyBookList';
+// import BookContext from '../../../components/BookListIndex/index';
+// import BookLists  from "./BookLists";
 
 const groupBy = (list, key) => {
    return list.reduce((result, item) => {
@@ -54,6 +55,7 @@ export const Nav = () => {
 
    
  return (
+     <BookListContext.Provider value={{ bookLists, handleAddBook }}>
       <div className={styles.textBoxContainer}>
          <div className={styles.description}>
            <div className={styles.list}>  
@@ -76,12 +78,9 @@ export const Nav = () => {
                </a>
             </nav>  
          </div>
-      </div>
-       <MyBookListContext.Provider value={bookLists}>  
-        <BookLists> 
-       </BookLists> 
-     </MyBookListContext.Provider>  
+      </div>   
     </div>
+</BookListContext.Provider>
  )};
  
 export default Nav;

@@ -1,6 +1,7 @@
 import React from 'react';
 import Routing from './routing/index';
-import './Pages/SidePanel/Nav/styles.module.scss';
+import './Pages/Home/styles.module.scss';
+import './Pages/MyBookList/styles.module.scss';
 //import {BookListContext} from './context/index';
 
 function App() {
