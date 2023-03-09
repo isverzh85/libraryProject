@@ -52,7 +52,7 @@ export const Nav = () => {
     setAddBookList((prevList) => [...prevList, book]);
   };
   
-
+ // You're setting the book list on this page but where are you using it?
    
  return (
      <BookListContext.Provider value={{ bookLists, handleAddBook }}>
