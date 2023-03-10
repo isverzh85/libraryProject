@@ -1,28 +1,28 @@
 import React, { useState, useContext } from 'react';
 import styles from '../MyBookList/styles.module.scss';
-import BookContext from '../../components/BookListIndex/index';
+import BookListContext from '../../components/BookListIndex/index';
 
 export const MyBookList = ({myBookList}) => {
   const [newBook, setNewBook] = useState({});
-  const { addBookList } = useContext(BookContext);
+  const bookLists = useContext(BookListContext);
 
-  const handleAddBook = () => {
-    if (newBook.title && newBook.cover_url) {
-      setNewBook({ ...addBookList, newBook });
-      setNewBook({});
-    }
-  }; 
+  // const handleAddBook = () => {
+  //   if (newBook.title && newBook.cover_url) {
+  //     setNewBook({ ...addBookList, newBook });
+  //     setNewBook({});
+  //   }
+  // }; 
 
-  const handleInputChange = (event) => {
-    const { name, value } = event.target;
-    setNewBook({ ...newBook, [name]: value });
-  };
+  // const handleInputChange = (event) => {
+  //   const { name, value } = event.target;
+  //   setNewBook({ ...newBook, [name]: value });
+  // };
 
 return (
       <div className={styles.mainContainer}>
         <h1 className={styles.bookContainer}>My book list</h1>
         <ul>
-        {addBookList.map((book) => (
+        {myBookList && myBookList.map((book) => (
           <li key={book.title}>
             <div>{book.title}</div>
             <div>{book.authors.map((author) => author.name).join(', ')}</div>
