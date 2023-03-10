@@ -14,7 +14,7 @@ const groupBy = (list, key) => {
   };
 
   export const BookLists = () => {
-    const [bookLists, setBookList] = useState([]);
+    const [bookLists, setBookLists] = useState([]);
     const getBookData = async (genre) => {
         let books = [];
         const bookListAPI = `https://openlibrary.org/subjects/${genre}.json`;
@@ -33,7 +33,7 @@ const groupBy = (list, key) => {
            let groupedBooks = groupBy(books, 'first_publish_year');
            let years = Object.keys(groupedBooks).sort((year1, year2) => year2 - year1);
            let bookData = years.map(year => ({ year, books: groupedBooks[year] }));
-            setBookList(bookData)
+            setBookLists(bookData)
 
   }  
   return (
