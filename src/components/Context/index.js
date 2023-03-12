@@ -1,5 +1,4 @@
 import React, { createContext, useState } from 'react';
-import MyBookList from '../../Pages/MyBookList/MyBookList';
 
 export const BookListContext = createContext();
 
@@ -13,7 +12,6 @@ export const BookListProvider = ({ children }) => {
   return (
     <BookListContext.Provider value={{bookList, setBookList, addBookToList}}>
         {children}
-        <MyBookList addBookToList={addBookToList} myBookList={bookList} />
     </BookListContext.Provider>
   );
 };

@@ -3,6 +3,8 @@ import Routing from './routing/index';
 import './Pages/Home/styles.module.scss';
 import './Pages/MyBookList/styles.module.scss';
 import {BookListContext} from '../src/components/Context/index';
+import MyBookList from './Pages/MyBookList/MyBookList';
+
 
 function App() {
   
@@ -15,6 +17,7 @@ function App() {
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin></link>
       <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet"></link>
       <BookListContext.Provider value={[bookList, setBookList]}>
+          <MyBookList />
           <Routing/>
       </BookListContext.Provider>
       </header>

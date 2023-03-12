@@ -1,4 +1,5 @@
 import React, { useState, useContext  }  from "react";
+import { useHistory } from "react-router-dom"; 
 import styles from '../../Pages/Home/styles.module.scss';
 import Axios from 'axios';
 import cn from 'classnames';
@@ -16,6 +17,8 @@ export const Nav = () => {
     const [bookLists, setBookList] = useState([]); 
     const [addBookList, setAddBookList] = useState([]);
     const [bookList, setBookListContext] = useContext(BookListContext);
+    const history = useHistory(); 
+
     console.log(bookList)
 
     const getBookData = async (genre) => {
@@ -42,24 +45,36 @@ export const Nav = () => {
    }
 
    const handleAddBook = (book) => {
-      setBookList((bookLists) => {
-      const updatedBookLists = [...bookLists];
-      updatedBookLists.forEach((bookList) => {
-         if (bookList.year === book.first_publish_year) {
-           bookList.books.push(book);
-         }
-       });
-       return updatedBookLists;
-       
-     });
-   };
-      
+      const newBook = {
+         title:book.title, 
+         authors:book.authors, 
+         cover_url: `https://covers.openlibrary.org/b/id/${book.cover_id}-L.jpg`,
+         first_publish_year: book.first_publish_year,
+         cover_id: book.cover_id,
+         key: book.key
+      };
+        if (!addBookList.includes(book.key)) {
+         setAddBookList([...addBookList, book.key]);
+         setBookList([...bookList, newBook]);
+      };
+   }
+
+   const handleAddClick = (book) => {
+      if (!addBookList.includes(book.cover_id)) {
+         setAddBookList([...addBookList, book.cover_id]);
+         handleAddBook(book);
+       }
+      };
+   
+      const handleViewBookListClick = () => {
+         history.push("/my-book-list");
+       };
 
    function getAuthorNames(book) {
       const authors = book.authors?.map(author => author.name);
       const uniqueAuthors = [...new Set(authors)];
-      return uniqueAuthors.join(', ');
-    }
+      return uniqueAuthors.length > 0 ? uniqueAuthors.join(', ') : 'Unknown Author';
+   }
     
 return (
    <div className={styles.textBoxContainer}>
@@ -88,7 +103,6 @@ return (
           <div className={styles.listBook}>
               {bookLists?.length > 0 && bookLists?.map((book, index) => {
              return (
-
                <div className={styles.mainContainer}>
                   <h2 className={styles.year}>{book.year}</h2>
                <div className={styles.listOfBooks}>
@@ -105,10 +119,7 @@ return (
                   ) :  (<div className={styles.bookCoverContainer}></div>
                )} 
                 </div>
-               
-                     <button className={styles.bookButton} onClick= {handleAddBook}  >+</button> 
-                     
-
+                     <button className={styles.bookButton}  onClick={() => handleAddClick(book)} >+</button> 
                 <div className={styles.title}>{book.title} </div>
                    {book.authors?.map((author) => {
                         return (
