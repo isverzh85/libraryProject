@@ -77,6 +77,8 @@ export const Nav = () => {
    }
     
 return (
+   <BookListContext.Provider value={{ cover: 'book-cover-url', title: 'Book Title', author: 'Book Author' }}>
+
    <div className={styles.textBoxContainer}>
       <div className={styles.description}>
           <div className={styles.list}>  
@@ -136,6 +138,7 @@ return (
             })}
         </div>
       </div>
-   )};
+   </BookListContext.Provider>
+ )};
    
   export default Nav;
