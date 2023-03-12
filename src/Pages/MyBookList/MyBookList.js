@@ -6,14 +6,13 @@ import { BookListContext } from '../../components/Context/index';
 export const MyBookList = ({myBookList}) => {
   const [newBook, setNewBook] = useState({});
   const [bookList, setBookList] = useContext(BookListContext);
+  const { addBookToList } = useContext(BookListContext);
+
   console.log(bookList)
 
-   const handleAddBook = () => {
-      if (newBook.title && newBook.cover_url) {
-         setBookList([ ...bookList, newBook ]);
-         setNewBook({});
-     }
-   }; 
+  const handleAddBook = () => {
+    addBookToList();
+  }
 
    const handleInputChange = (event) => {
    const { name, value } = event.target;

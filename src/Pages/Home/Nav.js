@@ -50,6 +50,7 @@ export const Nav = () => {
          }
        });
        return updatedBookLists;
+       
      });
    };
       
@@ -104,7 +105,9 @@ return (
                   ) :  (<div className={styles.bookCoverContainer}></div>
                )} 
                 </div>
+               
                      <button className={styles.bookButton} onClick= {handleAddBook}  >+</button> 
+                     
 
                 <div className={styles.title}>{book.title} </div>
                    {book.authors?.map((author) => {
