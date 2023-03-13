@@ -4,7 +4,7 @@ import styles from '../../Pages/Home/styles.module.scss';
 import Axios from 'axios';
 import cn from 'classnames';
 import logo from '../../../src/assets/logo.png';
-import { BookListContext } from '../../context/BookList/BookListContext';
+import { MyAddedBookListContext } from '../../context/BookList/BookListContext.js';
 
 const groupBy = (list, key) => {
    return list.reduce((result, item) => {
@@ -16,11 +16,16 @@ const groupBy = (list, key) => {
 export const Nav = () => {
     const [bookList, setBookList] = useState([]); 
     const [addBookList, setAddBookList] = useState([]);
-    const { bookData, addBookToList} = useContext(BookListContext);
-    console.log(BookListContext)
-    const history = useHistory(); 
+   //  const { bookData, addBookToList} = useContext(BookListContext);
+   //  console.log(BookListContext)
 
-    console.log(bookList)
+   const { myAddedBookList } = useContext(MyAddedBookListContext);
+   console.log('THIS IS MY CONTEXT:', myAddedBookList);
+
+   const addBookToList = () => {
+   }
+
+    const history = useHistory(); 
 
     const getBookData = async (genre) => {
     let books = [];
@@ -44,10 +49,6 @@ export const Nav = () => {
       setBookList(bookData);
       
    }
-
-
-
-
 
    function getAuthorNames(book) {
       const authors = book.authors?.map(author => author.name);

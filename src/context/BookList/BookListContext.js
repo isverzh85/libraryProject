@@ -1,5 +1,7 @@
 import { createContext } from 'react';
 
-export const BookListContext = createContext("Test");
+export const MyAddedBookListContext = createContext({
+    myAddedBookList: "Test"
+  });
 
-export default BookListContext; 
+export default MyAddedBookListContext; 
