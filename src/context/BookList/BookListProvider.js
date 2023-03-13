@@ -12,11 +12,14 @@ const BookListProvider = ({ children }) => {
       first_publish_year,
       cover_id
     };
-    setBookList([...bookList, {...newBook, id: bookList.length + 1}]);
-  };
+    setBookList((prevBookList) => [
+        ...prevBookList,
+        { ...newBook, id: prevBookList.length + 1 },
+      ]);
+    };
 
   const deleteBookFromList = (bookId) => {
-        const updatedBookList = bookList.filter((book) => book.key !== bookId);
+        const updatedBookList = bookList.filter((book) => book.id !== bookId);
         setBookList(updatedBookList);
       };
 
