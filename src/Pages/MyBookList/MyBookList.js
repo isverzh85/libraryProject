@@ -4,7 +4,8 @@ import { BookListContext } from '../../context/BookList/BookListContext';
 
 
 export const MyBookList = ({myBookList}) => {
-  const [bookList, setBookList] = useContext(BookListContext);
+  const {bookList, setBookListContext, addBookToList} = useContext(BookListContext);
+
   const [selectedBook, setSelectedBook] = useState(null);
 
   
@@ -17,7 +18,7 @@ return (
            {!selectedBook ? (
               <>
                  {bookList.map((book, index) => (
-                     <div key={book.cover_id} onClick={() => setSelectedBook(book)}>
+                     <div key={book.cover_id} onClick={() => addBookToList(book)}>
                      <img src={book.cover} alt={book.title} />
                      <h2>{book.title}</h2>
                      <p>{book.author}</p>

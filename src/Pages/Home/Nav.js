@@ -14,10 +14,9 @@ const groupBy = (list, key) => {
  };
 
 export const Nav = () => {
-    const [bookLists, setBookList] = useState([]); 
+    const [bookList, setBookList] = useState([]); 
     const [addBookList, setAddBookList] = useState([]);
-    const [bookList, setBookListContext] = useContext(BookListContext);
-
+    const {bookList, setBookListContext, addBookToList} = useContext(BookListContext);
     const history = useHistory(); 
 
     console.log(bookList)
@@ -42,46 +41,12 @@ export const Nav = () => {
    let years = Object.keys(groupedBooks).sort((year1, year2) => year2 - year1);
    let bookData = years.map(year => ({ year, books: groupedBooks[year] }));
       setBookList(bookData);
-      setBookListContext(bookData);
-   }
-
-   const handleAddBook = (book) => {
-      const newBook = {
-         title:book.title, 
-         authors:book.authors, 
-         cover_url: `https://covers.openlibrary.org/b/id/${book.cover_id}-L.jpg`,
-         first_publish_year: book.first_publish_year,
-         cover_id: book.cover_id,
-         key: book.key
-      };
-        if (!addBookList.includes(book.key)) {
-         setAddBookList([...addBookList, book.key]);
-         setBookList([...bookList, newBook]);
-      };
-   }
-
-   const handleAddClick = (book) => {
-      if (!addBookList.includes(book.cover_id)) {
-         setAddBookList([...addBookList, book.cover_id]);
-         handleAddBook(book);
-
-         const bookData = {
-            title: book.title,
-            authors: book.authors,
-            cover_url: `https://covers.openlibrary.org/b/id/${book.cover_id}-L.jpg`,
-            first_publish_year: book.first_publish_year,
-            cover_id: book.cover_id,
-            key: book.key
-          };
-          
-          history.push({
-            pathname: "/my-book-list",
-            state: { bookData }
-          });
-       }
-      };
-   
       
+   }
+
+
+
+
 
    function getAuthorNames(book) {
       const authors = book.authors?.map(author => author.name);
@@ -115,7 +80,7 @@ return (
          </div>
        </div>
           <div className={styles.listBook}>
-              {bookLists?.length > 0 && bookLists?.map((book, index) => {
+              {bookList?.length > 0 && bookList?.map((book, index) => {
              return (
                <div className={styles.mainContainer}>
                   <h2 className={styles.year}>{book.year}</h2>
@@ -133,7 +98,7 @@ return (
                   ) :  (<div className={styles.bookCoverContainer}></div>
                )} 
                 </div>
-                     <button className={styles.bookButton}  onClick={() => handleAddClick(book)} >+</button> 
+                     <button className={styles.bookButton}  onClick={() => addBookToList(book)} >+</button> 
                 <div className={styles.title}>{book.title} </div>
                    {book.authors?.map((author) => {
                         return (
@@ -152,4 +117,4 @@ return (
       </div>
  )};
    
-  export default Nav;
+export default Nav;

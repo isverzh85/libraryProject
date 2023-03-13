@@ -20,14 +20,11 @@ const BookListProvider = ({ children }) => {
         setBookList(updatedBookList);
       };
 
-      return (
-        <BookListContext.Provider value={{bookList, setBookList, addBookToList, deleteBookFromList}}>
+  return (
+    <BookListContext.Provider value={{bookList, setBookList, addBookToList, deleteBookFromList}}>
             {children}
-        </BookListContext.Provider>
-
+    </BookListContext.Provider>
       )
  };
 
-
  export default BookListProvider; 
-
