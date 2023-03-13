@@ -16,8 +16,7 @@ const groupBy = (list, key) => {
 export const Nav = () => {
     const [bookList, setBookList] = useState([]); 
     const [addBookList, setAddBookList] = useState([]);
-    const { bookData, addBookToList} = useContext(BookListContext);
-    console.log(BookListContext)
+    const { addBookToList} = useContext(BookListContext);
     const history = useHistory(); 
 
     console.log(bookList)
@@ -43,7 +42,17 @@ export const Nav = () => {
    let bookData = years.map(year => ({ year, books: groupedBooks[year] }));
       setBookList(bookData);
       
-   }
+   
+   if (bookData.length > 0 && bookData[0].books.length > 0) {
+      const firstBook = bookData[0].books[0];
+      addBookToList({
+        title: firstBook.title,
+        authors: firstBook.authors,
+        cover_id: firstBook.cover_id,
+        first_publish_year: firstBook.first_publish_year,
+      });
+    }
+  };
 
 
 
@@ -77,6 +86,7 @@ return (
                <img src={logo} alt="logo" className={styles.logo}/>
                <button type="button" className={cn(styles.navButton, styles.separateNav)}>View my book list</button>  
                </a>
+               
             </nav>  
          </div>
        </div>

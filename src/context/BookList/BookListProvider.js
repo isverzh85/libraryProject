@@ -1,8 +1,12 @@
 import React, {useState} from "react";
 import BookListContext from "./BookListContext";
 
+
 const BookListProvider = ({ children }) => {
   const [bookList, setBookList] = useState([]);
+  const [selectedBook, setSelectedBook] = useState(null);
+
+
 
   const addBookToList = ({title, authors, cover_id, first_publish_year}) => {
     const newBook = {
@@ -16,7 +20,10 @@ const BookListProvider = ({ children }) => {
         ...prevBookList,
         { ...newBook, id: prevBookList.length + 1 },
       ]);
-    };
+    setSelectedBook(newBook);
+    setBookList([newBook]);
+
+   };
 
   const deleteBookFromList = (bookId) => {
         const updatedBookList = bookList.filter((book) => book.id !== bookId);

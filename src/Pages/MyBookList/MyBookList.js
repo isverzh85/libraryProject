@@ -3,14 +3,15 @@ import styles from '../MyBookList/styles.module.scss';
 import { BookListContext } from '../../context/BookList/BookListContext';
 
 
-export const MyBookList = ({myBookList}) => {
-  const {bookList, setBookListContext, addBookToList} = useContext(BookListContext);
+export const MyBookList = ({book}) => {
+  const [selectedBook, setSelectedBook] = useState(null);
+  const { bookData, addBookToList} = useContext(BookListContext);
+
   console.log(BookListContext)
 
-  const [selectedBook, setSelectedBook] = useState(null);
 
   
-  console.log(bookList)
+  console.log(bookData)
 
 return (
        <div>
@@ -18,7 +19,7 @@ return (
          <div className={styles.bookListContainer}>
            {!selectedBook ? (
               <>
-                 {bookList.map((book, index) => (
+                 {bookData.map((book, index) => (
                      <div key={book.cover_id} onClick={() => addBookToList(book)}>
                      <img src={book.cover} alt={book.title} />
                      <h2>{book.title}</h2>
