@@ -5,7 +5,7 @@ import { BookListContext } from '../../context/BookList/BookListContext';
 
 export const MyBookList = ({myBookList}) => {
   const {bookList, setBookListContext, addBookToList} = useContext(BookListContext);
-  console.log('Test')
+  console.log(BookListContext)
 
   const [selectedBook, setSelectedBook] = useState(null);
 
