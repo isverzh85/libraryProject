@@ -16,10 +16,9 @@ export const MyBookList = ({myBookList}) => {
 
 return (
       <BookListContext.Provider value={[bookList, setBookList]}>
-        <h1 className={styles.bookContainer}>My book list</h1>
-        
-        <div className={styles.bookListContainer}>
-          {!selectedBook ? (
+        <h1 className={styles.bookContainer}>My book list</h1>    
+         <div className={styles.bookListContainer}>
+           {!selectedBook ? (
               <>
                  {bookList.map((book, index) => (
                      <div key={book.cover_id} onClick={() => setSelectedBook(book)}>

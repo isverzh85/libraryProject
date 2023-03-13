@@ -63,12 +63,24 @@ export const Nav = () => {
       if (!addBookList.includes(book.cover_id)) {
          setAddBookList([...addBookList, book.cover_id]);
          handleAddBook(book);
+
+         const bookData = {
+            title: book.title,
+            authors: book.authors,
+            cover_url: `https://covers.openlibrary.org/b/id/${book.cover_id}-L.jpg`,
+            first_publish_year: book.first_publish_year,
+            cover_id: book.cover_id,
+            key: book.key
+          };
+          
+          history.push({
+            pathname: "/my-book-list",
+            state: { bookData }
+          });
        }
       };
    
-      const handleViewBookListClick = () => {
-         history.push("/my-book-list");
-       };
+      
 
    function getAuthorNames(book) {
       const authors = book.authors?.map(author => author.name);
