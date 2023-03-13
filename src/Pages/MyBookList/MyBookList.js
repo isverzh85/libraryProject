@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react';
 import styles from '../MyBookList/styles.module.scss';
-import { BookListContext } from '../../components/Context/index';
+import { BookListContext } from '../../context/BookList/BookListContext';
 
 
 export const MyBookList = ({myBookList}) => {
@@ -10,12 +10,8 @@ export const MyBookList = ({myBookList}) => {
   
   console.log(bookList)
 
-  
-  
-
-
 return (
-      <BookListContext.Provider value={[bookList, setBookList]}>
+       <div>
         <h1 className={styles.bookContainer}>My book list</h1>    
          <div className={styles.bookListContainer}>
            {!selectedBook ? (
@@ -46,7 +42,7 @@ return (
       <div className={styles.exportContainer}>
         <button className={styles.exportButton}>Export to CSV</button>
       </div>
-    </BookListContext.Provider>
+      </div>
   );
 }
 

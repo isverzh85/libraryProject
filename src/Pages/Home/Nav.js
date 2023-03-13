@@ -4,7 +4,7 @@ import styles from '../../Pages/Home/styles.module.scss';
 import Axios from 'axios';
 import cn from 'classnames';
 import logo from '../../../src/assets/logo.png';
-import { BookListContext } from '../../components/Context/index';
+import { BookListContext } from '../../context/BookList/BookListContext';
 
 const groupBy = (list, key) => {
    return list.reduce((result, item) => {
@@ -17,6 +17,7 @@ export const Nav = () => {
     const [bookLists, setBookList] = useState([]); 
     const [addBookList, setAddBookList] = useState([]);
     const [bookList, setBookListContext] = useContext(BookListContext);
+
     const history = useHistory(); 
 
     console.log(bookList)
@@ -89,7 +90,6 @@ export const Nav = () => {
    }
     
 return (
-   <BookListContext.Provider value={{ cover: 'book-cover-url', title: 'Book Title', author: 'Book Author' }}>
 
    <div className={styles.textBoxContainer}>
       <div className={styles.description}>
@@ -150,7 +150,6 @@ return (
             })}
         </div>
       </div>
-   </BookListContext.Provider>
  )};
    
   export default Nav;
