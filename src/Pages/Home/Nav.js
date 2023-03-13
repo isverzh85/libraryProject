@@ -16,7 +16,7 @@ const groupBy = (list, key) => {
 export const Nav = () => {
     const [bookList, setBookList] = useState([]); 
     const [addBookList, setAddBookList] = useState([]);
-    const { addBookToList} = useContext(BookListContext);
+    const { bookData, addBookToList} = useContext(BookListContext);
     console.log(BookListContext)
     const history = useHistory(); 
 
