@@ -4,7 +4,7 @@ import styles from '../../Pages/Home/styles.module.scss';
 import Axios from 'axios';
 import cn from 'classnames';
 import logo from '../../../src/assets/logo.png';
-import { BookListContext } from '../../context/BookList/BookListContext';
+import { MyAddedBookListContext } from '../../context/BookList/MyBookListContext.js';
 
 const groupBy = (list, key) => {
    return list.reduce((result, item) => {
@@ -15,11 +15,38 @@ const groupBy = (list, key) => {
 
 export const Nav = () => {
     const [bookList, setBookList] = useState([]); 
-    const [addBookList, setAddBookList] = useState([]);
-    const { addBookToList} = useContext(BookListContext);
+    const { myAddedBookList } = useContext(MyAddedBookListContext);
+       console.log('THIS IS MY CONTEXT:', myAddedBookList);
     const history = useHistory(); 
 
-    console.log(bookList)
+
+   const addBookToList = ({title, authors, cover_id, first_publish_year}) => {
+      const newBook = {
+          title, 
+          authors, 
+          cover_url: `https://covers.openlibrary.org/b/id/${cover_id}-L.jpg`,
+          first_publish_year,
+          cover_id
+        };
+          setBookList((prevBookList) => [
+             ...prevBookList,
+         { ...newBook, id: prevBookList.length + 1 },
+      ]);
+      myAddedBookList.dispatch({
+         type: 'ADD_BOOK',
+         payload: newBook,
+      });
+    };
+
+    function handleBookListChange(event) {
+      const newBookList = [...bookList]; 
+      const bookIndex = parseInt(event.target.value);
+      const selectedBook = newBookList[bookIndex];
+      newBookList.splice(bookIndex, 1);
+      setBookList(newBookList);
+      history.push('/my-book-list');
+
+    }
 
     const getBookData = async (genre) => {
     let books = [];
@@ -52,11 +79,7 @@ export const Nav = () => {
         first_publish_year: firstBook.first_publish_year,
       });
     }
-  };
-
-
-
-
+   }
 
    function getAuthorNames(book) {
       const authors = book.authors?.map(author => author.name);
@@ -82,10 +105,8 @@ return (
                <button type="button" className={cn(styles.navButton, styles.navListItem5)} onClick={() => getBookData('personal_development')}>personal development</button>
                <button type="button" className={cn(styles.navButton, styles.navListItem6)} onClick={() => getBookData('romance')}>romance</button>
                <button type="button" className={cn(styles.navButton, styles.navListItem7)} onClick={() => getBookData('sci-fi')}>sci-fi</button>
-               <a href ="/my-book-list">
                <img src={logo} alt="logo" className={styles.logo}/>
-               <button type="button" className={cn(styles.navButton, styles.separateNav)}>View my book list</button>  
-               </a>
+               <button type="button" className={cn(styles.navButton, styles.separateNav)} onClick={handleBookListChange}>View my book list</button>  
                
             </nav>  
          </div>
@@ -109,7 +130,7 @@ return (
                   ) :  (<div className={styles.bookCoverContainer}></div>
                )} 
                 </div>
-                     <button className={styles.bookButton}  onClick={() => addBookToList(book)} >+</button> 
+                     <button className={styles.bookButton}  onClick={() => handleBookListChange(book)} >+</button> 
                 <div className={styles.title}>{book.title} </div>
                    {book.authors?.map((author) => {
                         return (
