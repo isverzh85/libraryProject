@@ -57,6 +57,7 @@ export const MyBookList = ({ myBookList }) => {
       <div className={styles.post}>
         <form className={styles.postForm}>
           <textarea>
+            <input type = "text" placeHolder="Add a note"></input>
             </textarea>
         </form>
       </div>

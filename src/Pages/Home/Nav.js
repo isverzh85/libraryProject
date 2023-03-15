@@ -52,43 +52,22 @@ export const Nav = () => {
        }
      }
 
-   const addBookToList = ({title, authors, cover_id, first_publish_year}) => {
-      const newBook = {
-          title, 
-          authors, 
-          cover_url: `https://covers.openlibrary.org/b/id/${cover_id}-L.jpg`,
-          first_publish_year,
-          cover_id
-        };
-          setBookList((prevBookList) => [
-             ...prevBookList,
-         { ...newBook, id: prevBookList.length + 1 },
-      ]);
-    };
-   //  useEffect(() => {
+   // const addBookToList = ({title, authors, cover_id, first_publish_year}) => {
    //    const newBook = {
-   //      id: bookList.length + 1,
-   //      title: 'Test',
-   //      authors: { name: 'Test 2' }
-   //    };
-   //    setBookList(prevBookList => [...prevBookList, newBook]);
-   //    localStorage.setItem('bookList', JSON.stringify([...bookList, newBook]));
-   //  }, []);
-   
-
-   //  const addSelectedBookToList = () => {
-   //    const newBook = newBook;
-   //    setBookList((prevBookList) => [
-   //      ...prevBookList,
-   //      { ...newBook, id: prevBookList.length + 1 },
+   //        title, 
+   //        authors, 
+   //        cover_url: `https://covers.openlibrary.org/b/id/${cover_id}-L.jpg`,
+   //        first_publish_year,
+   //        cover_id
+   //      };
+   //        setBookList((prevBookList) => [
+   //           ...prevBookList,
+   //       { ...newBook, id: prevBookList.length + 1 },
    //    ]);
-   //    setBookList(null);
    //  };
 
-    
-     
-    const addSelectedBookToList = (newBook) => {
-      setBookList(prevBookList => [
+   const addBookToList = (newBook) => {
+      setBookList((prevBookList) => [
         ...prevBookList,
         { ...newBook, id: prevBookList.length + 1 },
       ]);
@@ -98,40 +77,53 @@ export const Nav = () => {
       if (!selectedBook) {
         return;
       }
+    
+      addBookToList(selectedBook);
+    
+      console.log('THIS IS MY CONTEXT AFTER UPDATE:', bookList);
+    };
+   
 
-      const updatedList = [
-        ...myAddedBookList,
-        {
-          title: selectedBook.title,
-          authors: selectedBook.authors,
-          cover_url: selectedBook.cover_url,
-          first_publish_year: selectedBook.first_publish_year,
-          cover_id: selectedBook.cover_id,
-          id: myAddedBookList.length + 1
-        }
-      ];
-      setBookList(updatedList);
+   //  useEffect(() => {
+   //    const newBook = {
+   //      id: bookList.length + 1,
+   //      title: 'Test',
+   //      authors: { name: 'Test 2' }
+   //    };
+   //    setBookList(prevBookList => [...prevBookList, newBook]);
+   //    localStorage.setItem('bookList', JSON.stringify([...bookList, newBook]));
+   //  }, []);
+
+   //  const changeTest = (selectedBook) => {
+   //    if (!selectedBook) {
+   //      return;
+   //    }
+   //    const updatedList = [
+   //      ...myAddedBookList,
+   //      {
+   //        title: selectedBook.title,
+   //        authors: selectedBook.authors,
+   //        cover_url: selectedBook.cover_url,
+   //        first_publish_year: selectedBook.first_publish_year,
+   //        cover_id: selectedBook.cover_id,
+   //        id: myAddedBookList.length + 1
+   //      }
+   //    ];
+   //    setBookList(updatedList);
       
 
-      console.log('THIS IS MY CONTEXT AFTER UPDATE:', updatedList);
-    }
+   //    console.log('THIS IS MY CONTEXT AFTER UPDATE:', updatedList);
+   //  }
 
-    function convertString(str) {
-      const obj = {
-        value: str + " 2"
-      };
-      return JSON.stringify(obj);
-    }
+   //  function convertString(str) {
+   //    const obj = {
+   //      value: str + " 2"
+   //    };
+   //    return JSON.stringify(obj);
+   //  }
     
-    const book = {
-      title: "The Hitchhiker's Guide to the Galaxy",
-      author: "Douglas Adams",
-      year: 1979
-    };
-    
-    
+  
     function handleAddToBookList(event) {
-      event.preventDefault();
       const newBookList = [...bookList];
       const newBook = { 
         id: bookList.length + 1,
@@ -145,11 +137,6 @@ export const Nav = () => {
       setBookList(newBookList);
       history.push('/my-book-list');
     }
-
-    
-      
-   
- 
 
    function getAuthorNames(book) {
       const {authors} = book
