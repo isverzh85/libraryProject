@@ -10,10 +10,21 @@ export const MyBookList = ({ myBookList }) => {
   console.log('THIS IS MY CONTEXT:', myAddedBookList);
 
 
+
+  const changeTest = () => {
+    const updatedList = myAddedBookList.replace('Test', 'Test 2');
+    setSelectedBook(updatedList);
+    console.log('THIS IS MY CONTEXT AFTER UPDATE:', updatedList);
+  }
+    
+  console.log('THIS IS MY CONTEXT:', myAddedBookList);
+  changeTest(); 
+  console.log('THIS IS MY CONTEXT AFTER UPDATE:', myAddedBookList);
+
   return (
     <div>
       <h1 className={styles.bookContainer}>My book list</h1>
-      <div className={styles.bookListContainer}>
+      <div className={styles.bookListContainer}>{myAddedBookList}
         {/* {!selectedBook ? (
           <>
             {bookList.map((book, index) => (
@@ -42,6 +53,12 @@ export const MyBookList = ({ myBookList }) => {
 
       <div className={styles.exportContainer}>
         <button className={styles.exportButton}>Export to CSV</button>
+      </div>
+      <div className={styles.post}>
+        <form className={styles.postForm}>
+          <textarea>
+            </textarea>
+        </form>
       </div>
     </div>
   );

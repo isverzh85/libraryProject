@@ -5,19 +5,21 @@ import Nav from '../Pages/Home/Nav';
 
 function Routes() {
   return (
-    <Router>
+    <>
+      <Router>
         <div>
-          <Switch>
-             <Route path="/my-book-list">
-               <MyBookList />
-             </Route>
-             <Route path="/">
-              <Nav key = "nav" />
-            </Route>  
-          </Switch>
+          <Nav key = "nav" />
+            <Switch>
+              <Route path="/my-book-list" >
+                <MyBookList />
+              </Route>
+              <Route path="/">
+              </Route>  
+           </Switch>
         </div>
     </Router>
-  );
+  </>
+ );
 }
 
 export default Routes;
