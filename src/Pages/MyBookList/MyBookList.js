@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import styles from "../MyBookList/styles.module.scss";
 import { MyAddedBookListContext } from '../../context/BookList/MyBookListContext';
 
@@ -8,23 +8,20 @@ export const MyBookList = () => {
 
   return (
     <div>
-      <h1 className={styles.bookContainer}>My book list</h1>
-      <div className={styles.bookListContainer}>
-        <h1>{myAddedBookList}</h1>
-      </div>
-
-      {/* <div className={styles.exportContainer}>
-        <button className={styles.exportButton}>Export to CSV</button>
-      </div>
-      <div className={styles.post}>
-        <form className={styles.postForm}>
-          <textarea>
-            <input type = "text" placeHolder="Add a note"></input>
-            </textarea>
-        </form>
-      </div> */}
+      {myAddedBookList?.map((book, index) => {
+        return (
+          <div key={index}>
+            <h1>My book list</h1>
+            <h2>{book.title}</h2>
+            <p>{book.authors}</p>
+            <img src={book.cover_url} alt={book.title} />
+          </div>
+        );
+      })}
     </div>
   );
+  
 };
 
 export default MyBookList;
+

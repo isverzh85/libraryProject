@@ -14,12 +14,10 @@ const groupBy = (list, key) => {
   }, {});
 };
 
-
 export const Nav = () => {
   const history = useHistory(); 
   const [bookList, setBookList] = useState([]);
   const { myAddedBookList, changeAddedBookList } = useContext(MyAddedBookListContext);
-
 
   useEffect(() => {
    changeAddedBookList([]);
@@ -47,13 +45,19 @@ export const Nav = () => {
     setBookList(bookData);
   };
 
-
   function handleAddToBookList(book) {
-   const { title, authors, cover_url, first_publish_year, cover_id } = book;
-   const authorNames = authors.map(author => author.name).join(", ");
-   bookList.push({ title, authors, cover_url, first_publish_year, cover_id });
-   console.log(` ${title} ${authorNames} ${cover_id} `);
- }
+    const { title, authors, cover_url, first_publish_year, cover_id } = book;
+    let authorNames = '';
+    authors.forEach((author, index) => {
+      authorNames += author.name;
+      if (index !== authors.length - 1) {
+        authorNames += ', ';
+      }
+    });
+    const updatedBookList = [...myAddedBookList, { title, authors, cover_url, first_publish_year, cover_id }];
+    changeAddedBookList(updatedBookList);
+    console.log(`${title} ${authorNames} ${cover_id}`);
+  }
 
   return (
     <div className={styles.textBoxContainer}>
@@ -130,29 +134,25 @@ export const Nav = () => {
           </nav>
         </div>
       </div>
-
-
-
       <h1>{myAddedBookList}</h1>
-
-
-
       <div className={styles.listBook}>
         {bookList?.length > 0 &&
-          bookList?.map((book, index) => {
+          bookList?.map((book, cover_id) => {
             return (
-              <div className={styles.mainContainer}>
+              <div className={styles.mainContainer} key={cover_id}>
                 <h2 className={styles.year}>{book.year}</h2>
                 <div className={styles.listOfBooks}>
                   {book.books?.map((book, index) => {
+                   const { title, authors, cover_url, first_publish_year, cover_id } = book;
                     return (
-                      <div className={styles.bookContainer}>
+                      <div className={styles.bookContainer} >
                         <div className={styles.book}>
                           {book.cover_id ? (
                             <img
                               className={styles.cover}
                               src={book.cover_url}
                               alt="book cover"
+                              
                             />
                           ) : (
                             <div className={styles.bookCoverContainer}></div>
@@ -164,10 +164,10 @@ export const Nav = () => {
                         >
                           +
                         </button>
-                        <div className={styles.title}>{book.title} </div>
+                        <div className={styles.title} >{book.title} </div>
                         {book.authors?.map((author) => {
                           return (
-                            <div className={styles.author}>
+                            <div className={styles.author}  >
                             </div>
                           );
                         })}
