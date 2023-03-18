@@ -134,7 +134,6 @@ export const Nav = () => {
           </nav>
         </div>
       </div>
-      <h1>{myAddedBookList}</h1>
       <div className={styles.listBook}>
         {bookList?.length > 0 &&
           bookList?.map((book, cover_id) => {

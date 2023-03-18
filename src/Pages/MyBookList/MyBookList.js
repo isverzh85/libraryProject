@@ -8,12 +8,11 @@ export const MyBookList = () => {
 
   return (
     <div>
-      {myAddedBookList?.map((book, index) => {
+       <h1>My book list</h1>
+        {myAddedBookList?.map((book, index) => {
         return (
           <div key={index}>
-            <h1>My book list</h1>
             <h2>{book.title}</h2>
-            <p>{book.authors}</p>
             <img src={book.cover_url} alt={book.title} />
           </div>
         );
@@ -24,4 +23,3 @@ export const MyBookList = () => {
 };
 
 export default MyBookList;
-
