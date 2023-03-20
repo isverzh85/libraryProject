@@ -325,3 +325,39 @@
       position:absolute;
       margin-top: 24px;
   }
+
+  /* CSS for devices with a maximum width of 600px */
+@media only screen and (max-width: 600px) {
+    .list {
+      width: 100%;
+      height: auto;
+      padding: 10px;
+    }
+    
+    .description {
+      height: auto;
+    }
+    
+    .listButtons {
+      width: 80%;
+      height: auto;
+      margin-left: 0;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      grid-gap: 10px;
+    }
+    .navListItem1, .navListItem2, .navListItem3, .navListItem4, .navListItem5, .navListItem6, .navListItem7 {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+      
+      .title, .author {
+        font-size: 16px;
+        line-height: 20px;
+      }
+      
+      .cover {
+        width: 100%;
+      }
+    }
