@@ -3,7 +3,7 @@ import styles from "../MyBookList/styles.module.scss";
 import { MyAddedBookListContext } from '../../context/BookList/MyBookListContext';
 
 export const MyBookList = () => {
-  const [notes, setNotes] = useState({});
+  // const [notes, setNotes] = useState({});
   const { myAddedBookList, changeAddedBookList } = useContext(MyAddedBookListContext);
 
   function handleBookListChanges(book) {
@@ -21,7 +21,7 @@ export const MyBookList = () => {
       cover_url, 
       year: first_publish_year, 
       cover_id, 
-      notes: notes[cover_id] 
+      // notes: notes[cover_id] 
     }];
     changeAddedBookList(updatedBookList);
     console.log(`${title} ${authorNames} ${cover_id}`);
@@ -34,11 +34,11 @@ export const MyBookList = () => {
     console.log(removedBook);
   }
 
-  function handleNotesSubmission(coverId, event) {
-    const updatedNotes = { ...notes, [coverId]: event.target.value };
-    setNotes(updatedNotes);
-    handleBookListChanges(myAddedBookList.find((book) => book.cover_id === coverId));
-  }
+  // function handleNotesSubmission(coverId, event) {
+  //   const updatedNotes = { ...notes, [coverId]: event.target.value };
+  //   setNotes(updatedNotes);
+  //   handleBookListChanges(myAddedBookList.find((book) => book.cover_id === coverId));
+  // }
 
   return (
     <div className={styles.bookContainer}>
@@ -60,13 +60,18 @@ export const MyBookList = () => {
                   >-
               </button>
              <div className={styles.bookTitleContainer}>
-              <h2 className={styles.title}>{book.title}</h2>
-                {book.authors?.map((author) => (
-                <div className={styles.author} key={author.id}>
+               <div className={styles.bookAuthorContainer}>
+                 <h2 className={styles.title}>{book.title}</h2>
+                    {book.authors?.map((author) => (
+                 <div className={styles.author} key={author.id}>
                    {author.name}
                 </div>
+              ))}
+           </div>
+          
 
-            ))}
+
+
                <h2 className={styles.year}>{book.first_publish_year}</h2>
 
                <form>
@@ -75,8 +80,8 @@ export const MyBookList = () => {
                   id={`notes_${book.cover_id}`}
                   name={`notes_${book.cover_id}`}
                   placeholder="Add notes..."
-                  value={notes[book.cover_id] || ""}
-                  onChange={(event) => handleNotesSubmission(book.cover_id, event)}
+                  // value={notes[book.cover_id] || ""}
+                  // onChange={(event) => handleNotesSubmission(book.cover_id, event)}
                 ></textarea>
             </form>
             </div>   
