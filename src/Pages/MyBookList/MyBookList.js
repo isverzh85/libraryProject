@@ -21,7 +21,6 @@ export const MyBookList = () => {
       cover_url, 
       year: first_publish_year, 
       cover_id, 
-      // notes: notes[cover_id] 
     }];
     changeAddedBookList(updatedBookList);
     console.log(`${title} ${authorNames} ${cover_id}`);
@@ -34,11 +33,18 @@ export const MyBookList = () => {
     console.log(removedBook);
   }
 
-  // function handleNotesSubmission(coverId, event) {
-  //   const updatedNotes = { ...notes, [coverId]: event.target.value };
-  //   setNotes(updatedNotes);
-  //   handleBookListChanges(myAddedBookList.find((book) => book.cover_id === coverId));
-  // }
+  function handleNotesSubmissionForm(coverId, event) {
+    const updatedBookList = myAddedBookList.map((book) => {
+      if (book.cover_id === coverId) {
+        return {
+          ...book,
+          notes: event.target.value,
+        };
+      }
+      return book;
+    });
+    changeAddedBookList(updatedBookList);
+  }
 
   return (
     <div className={styles.bookContainer}>
@@ -68,10 +74,6 @@ export const MyBookList = () => {
                 </div>
               ))}
            </div>
-          
-
-
-
                <h2 className={styles.year}>{book.first_publish_year}</h2>
 
                <form>
@@ -80,8 +82,8 @@ export const MyBookList = () => {
                   id={`notes_${book.cover_id}`}
                   name={`notes_${book.cover_id}`}
                   placeholder="Add notes..."
-                  // value={notes[book.cover_id] || ""}
-                  // onChange={(event) => handleNotesSubmission(book.cover_id, event)}
+                  value={book.notes || ""}
+                  onChange={(event) => handleNotesSubmissionForm(book.cover_id, event)}
                 ></textarea>
             </form>
             </div>   
