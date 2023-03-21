@@ -7,12 +7,9 @@ function Routes() {
   return (
     <Router>
        <div>
-         <Nav />
           <Switch>
               <Route exact path="/" component={Nav} />
-
-             <Route path="/my-book-list" component={MyBookList} />
-             {/* <Route exact path="/" component={Nav} /> */}
+              <Route path="/my-book-list" component={MyBookList} />
           </Switch>
          </div>
       </Router>

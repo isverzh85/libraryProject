@@ -61,17 +61,20 @@ export const Nav = () => {
 
   return (
     <div className={styles.navContainer}>
-      <div className={styles.bookContainer}>
-      <div className={styles.description}>
-        <div className={styles.list}>
-          <h1 className={styles.name}>Simple Book List Maker by Irina S. </h1>
-          <p className={styles.paragraph}>
-            This is a project that displays books based on the genre and when
-            clicked it retrieves the list of books for that genre.<br></br>It is
-            created using <strong>ReactJS</strong> and{" "}
-            <strong>OpenLibraryAPI</strong>.
-          </p>
-        </div>
+      <div className={styles.bookNavigationContainer}>
+      <div className={styles.descriptionContainer}>
+           <div className={styles.descriptionWrapper}>
+             <h1 className={styles.descriptionTitle}>
+                  Simple Book List Maker by Irina S.
+              </h1>
+            <p className={styles.paragraph}>
+               This is a project that displays books based on the genre and when clicked
+              it retrieves the list of books for that genre.
+            <br />
+             It is created using <strong>ReactJS</strong> and{" "}
+                <strong>OpenLibraryAPI</strong>.
+            </p>
+          </div>
         <div className={styles.bookListContainer}>
           <nav className={styles.listButtons}>
             <button
@@ -137,7 +140,7 @@ export const Nav = () => {
         </div>
       </div>
       </div>
-      <div className={styles.listBook}>
+      <div className={styles.listBookContainer}>
         {bookList?.length > 0 &&
           bookList?.map((book, cover_id) => {
             return (
