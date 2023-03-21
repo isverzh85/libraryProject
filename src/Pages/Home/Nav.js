@@ -60,9 +60,10 @@ export const Nav = () => {
   }
 
   return (
+  
     <div className={styles.navContainer}>
       <div className={styles.bookNavigationContainer}>
-      <div className={styles.descriptionContainer}>
+        <div className={styles.descriptionContainer}>
            <div className={styles.descriptionWrapper}>
              <h1 className={styles.descriptionTitle}>
                   Simple Book List Maker by Irina S.
@@ -75,7 +76,6 @@ export const Nav = () => {
                 <strong>OpenLibraryAPI</strong>.
             </p>
           </div>
-        <div className={styles.bookListContainer}>
           <nav className={styles.listButtons}>
             <button
               type="button"
@@ -137,9 +137,11 @@ export const Nav = () => {
             </button>
             </div>
           </nav>
-        </div>
-      </div>
-      </div>
+      </div> 
+    </div> 
+  </div>
+  </div>
+  
       <div className={styles.listBookContainer}>
         {bookList?.length > 0 &&
           bookList?.map((book, cover_id) => {
@@ -181,10 +183,9 @@ export const Nav = () => {
                   })}
                 </div>
               </div>
+            
             );
           })}
-      </div>
-    </div>
   );
 };
 
