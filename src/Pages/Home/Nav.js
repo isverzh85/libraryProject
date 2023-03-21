@@ -1,5 +1,5 @@
 import React, { useState, useContext, useEffect } from "react";
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import styles from "../../Pages/Home/styles.module.scss";
 import Axios from "axios";
 import cn from "classnames";
@@ -60,7 +60,8 @@ export const Nav = () => {
   }
 
   return (
-    <div className={styles.textBoxContainer}>
+    <div className={styles.navContainer}>
+      <div className={styles.bookContainer}>
       <div className={styles.description}>
         <div className={styles.list}>
           <h1 className={styles.name}>Simple Book List Maker by Irina S. </h1>
@@ -122,17 +123,19 @@ export const Nav = () => {
             >
               sci-fi
             </button>
-            <img src={logo} alt="logo" className={styles.logo} />
+            <div className={styles.viewButton}>
             <button
               type="button"
               className={cn(styles.navButton, styles.separateNav)}
               onClick={() => { history.push('/my-book-list') }}
             >
+              <img src={logo} alt="logo" className={styles.logo} />
               View my book list
             </button>
-            <Link to="/my-book-list">VIEW</Link>
+            </div>
           </nav>
         </div>
+      </div>
       </div>
       <div className={styles.listBook}>
         {bookList?.length > 0 &&

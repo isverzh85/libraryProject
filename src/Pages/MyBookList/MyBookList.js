@@ -1,11 +1,20 @@
 import React, { useState, useContext } from "react";
 import styles from "../MyBookList/styles.module.scss";
+import { CSVLink } from 'react-csv';
 import { MyAddedBookListContext } from '../../context/BookList/MyBookListContext';
 
 export const MyBookList = () => {
   // const [notes, setNotes] = useState({});
   const { myAddedBookList, changeAddedBookList } = useContext(MyAddedBookListContext);
 
+  const csvData = [[
+    `title`,
+    `authors`,
+    `https://covers.openlibrary.org/b/id/${'cover_id'}-L.jpg`,
+     `first_publish_year` ,
+     `cover_id` ,
+   ]   
+];
   function handleBookListChanges(book) {
     const { title, authors, cover_url, first_publish_year, cover_id } = book;
     let authorNames = '';
@@ -50,7 +59,9 @@ export const MyBookList = () => {
     <div className={styles.bookContainer}>
     <div className={styles.bookListContainer}>
     <div className={styles.myBookListContainer}>My book list</div>  
-    <button className={styles.exportButton}>Export to CSV</button>
+    <button className={styles.exportButton}>
+    <CSVLink data={csvData}>Export to CSV</CSVLink>
+   </button>
     </div>
     <div className={styles.bookInfoContainer}>
         {myAddedBookList?.map((book, index) => (

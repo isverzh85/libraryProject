@@ -10,6 +10,7 @@
     "classnames": "^2.3.2",
     "latest-version": "^7.0.0",
     "react": "~16.14.0",
+    "react-csv": "^2.2.2",
     "react-dom": "~16.14.0",
     "react-router-dom": "~5.2.0",
     "react-scripts": "5.0.1",

@@ -13,12 +13,12 @@
     display: flex;
     flex-direction: column;
     padding:30px;
-    height: 110vh;
+    height: 95vh;
 }
 
 .listButtons{
     width:70%;
-    height: 65vh;
+    height: 60vh;
     border-bottom: 1px solid #999999;
     display:grid;
     justify-content:center;
@@ -49,7 +49,7 @@
     box-sizing: border-box;
     width: 178px;
     height: 55px;
-    margin-top:38px;
+    margin-top:20px;
     margin-left:79px;
 }
 
@@ -158,7 +158,7 @@
     border-radius:100px;
     margin-left: 79px;
     margin-top: 10px;
-    margin-bottom: 70px;
+    margin-bottom: 50px;
 }
 
 .navListItem7:active, .navListItem7:focus, .navListItem7:hover {
@@ -237,7 +237,8 @@
 .mainContainer{
     display: flex;
     flex-direction: column;
-    margin: 25px 25px;
+    margin: 2px 25px;
+    height:50vh;
 }
 
 .rectangle{
@@ -281,7 +282,7 @@
     font-weight: bold;
 }
 
-.textBoxContainer{
+.navContainer{
     display: flex;
     height:10px;
 }
@@ -304,7 +305,6 @@
 .separateNav{
     width: 331px;
     height:55px;
-    margin-top: 2%;
     margin-left: 79px;
     border-radius:100px;
     border: 4px solid #00F4BA;
@@ -321,12 +321,18 @@
 }
 
 .logo{
-      margin-left:106px;
-      position:absolute;
-      margin-top: 24px;
+      margin-left:0;
+      padding-left: 0;
   }
 
-  /* CSS for devices with a maximum width of 600px */
+  .viewButton{
+    display: flex;
+    align-items: center;
+  }
+
+  
+
+/* Mobile screens */
 @media only screen and (max-width: 600px) {
     .list {
       width: 100%;
@@ -361,3 +367,45 @@
         width: 100%;
       }
     }
+
+/* For tablet screens */
+@media (max-width: 768px) {
+    .list {
+      width: 80%;
+      margin: 0 auto;
+    }
+  
+    .description {
+      height: auto;
+      padding: 10px;
+    }
+  
+    .listButtons {
+      height: auto;
+    }
+  
+    .navButton {
+      font-size: 18px;
+      line-height: 24px;
+    }
+  
+    .title, .author {
+      font-size: 16px;
+      line-height: 20px;
+    }
+  }
+  
+  /* For desktop screens */
+.list {
+    width: 370px;
+    height: 200px;
+  }
+  
+  .description {
+    height: 95vh;
+  }
+  
+  .listButtons {
+    width: 70%;
+    height: 60vh;
+  }
