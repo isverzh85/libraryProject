@@ -18,7 +18,7 @@
 
 .descriptionContainer{
     width:70%;
-    height: 60vh;
+    height: 85vh;
     border-bottom: 1px solid #999999;
     display:grid;
     justify-content:center;
@@ -320,6 +320,9 @@
     align-items: center;
   }
 
+  .listBookContainer{
+    overflow-y: scroll;
+  }
   
 
 /* Mobile screens */

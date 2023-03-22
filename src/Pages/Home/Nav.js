@@ -135,12 +135,10 @@ export const Nav = () => {
               <img src={logo} alt="logo" className={styles.logo} />
               View my book list
             </button>
-            </div>
-          </nav>
-      </div> 
+          </div>
+        </nav>
     </div> 
-  </div>
-  </div>
+  </div> 
   
       <div className={styles.listBookContainer}>
         {bookList?.length > 0 &&
@@ -174,7 +172,7 @@ export const Nav = () => {
                         <div className={styles.title} >{book.title} </div>
                         {book.authors?.map((author) => {
                           return (
-                            <div className={styles.author}  >
+                            <div className={styles.author}>
                             </div>
                           );
                         })}
@@ -183,9 +181,10 @@ export const Nav = () => {
                   })}
                 </div>
               </div>
-            
             );
           })}
+      </div>
+    </div>
   );
 };
 
