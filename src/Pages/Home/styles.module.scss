@@ -1,3 +1,8 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+  }
+
 .bookNavigationContainer{
     display: flex;
     flex-direction: column;
@@ -13,7 +18,7 @@
     display: flex;
     flex-direction: column;
     padding:30px;
-    height: 95vh;
+    height:95vh;
 }
 
 .descriptionContainer{
@@ -73,7 +78,7 @@
 .navListItem2:active, .navListItem2:focus, .navListItem2:hover {
     background-color: #FFD056;
     color: white;
-  }
+}
 
 .navListItem3{
     border: 4px solid #5BD8FF ;
@@ -91,7 +96,7 @@
 .navListItem3:active, .navListItem3:focus, .navListItem3:hover {
     background-color: #5BD8FF;
     color: white;
-  }
+}
 
 .navListItem4{
     border: 4px solid #000000 ;
@@ -109,7 +114,7 @@
 .navListItem4:active, .navListItem4:focus, .navListItem4:hover {
     background-color: #000000;
     color: white;
-  }
+}
 
 .navListItem5{
     border: 4px solid #FFFFFF ;
@@ -145,7 +150,7 @@
 .navListItem6:active, .navListItem6:focus,.navListItem6:hover {
     background-color: #D38CFF;
     color: white;
-  }
+}
 
 .navListItem7{
     border: 4px solid #5AFF3F;
@@ -164,7 +169,7 @@
 .navListItem7:active, .navListItem7:focus, .navListItem7:hover {
     background-color: #5AFF3F;
     color: white;
-  }
+}
 
 .title{
     color: #373737;
@@ -275,8 +280,6 @@
     font-weight: bold;
 }
 
-
-
 .bookButton{
     width:40px;
     height:40px;
@@ -290,6 +293,8 @@
     margin-left:-5px;
     margin-top:220px;
     position:absolute;
+    font-size:24px;
+    font-weight:bold;
 }
 
 .separateNav{
@@ -321,7 +326,10 @@
   }
 
   .listBookContainer{
+    flex: 1;
+    padding: 30px;
     overflow-y: scroll;
+    height:95vh;
   }
   
 

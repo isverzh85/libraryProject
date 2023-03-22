@@ -69,37 +69,34 @@
     line-height: 24px;
     color: #373737;
     margin-left: 220px;
-    margin-top:125px;
-    position:absolute;
+    margin-top:8px;
 }
 
 .image{
     width: 59px;
     height: 82px;
-    margin-top: 30px;
+    margin-top: 45px;
     border-radius: 10px;
-    position: absolute;
 }
 
 .form{
     width:446px;
     height: 101px;
-    margin-top:3px;
     margin-left:550px;
-    position: relative;
+    position: absolute;
     border-radius: 5px;
     box-sizing: border-box;
     border: 1px solid #C7C7C7;
+    transform: translateY(-100%);
 }
 
 .deleteButton{
     width:30px;
     height:30px;
-    margin-left: 35px;
-    margin-top:35px;
+    margin-top:20px;
+    position:absolute;
     // opacity: 0;
     box-sizing: border-box;
-    position:absolute;
     background: #D93A3A;
     border: 1px solid #FF0000;
     color:white;
@@ -115,13 +112,12 @@
     display:flex;
     flex-direction: column;
     justify-content: flex-end; 
-
 }
 
 .bookImageContainer{
-  position: relative;
-  margin-left: 50px;
+  margin-left: 20px;
   margin-top: 10px;
+  position:relative;
 }
 
 .bookDetailsContainer{

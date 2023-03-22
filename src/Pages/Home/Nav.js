@@ -60,10 +60,11 @@ export const Nav = () => {
   }
 
   return (
-  
-    <div className={styles.navContainer}>
-      <div className={styles.bookNavigationContainer}>
-        <div className={styles.descriptionContainer}>
+    <div className={styles.container}>
+      <div className={styles.navContainer}> 
+
+        <div className={styles.bookNavigationContainer}>
+          <div className={styles.descriptionContainer}>
            <div className={styles.descriptionWrapper}>
              <h1 className={styles.descriptionTitle}>
                   Simple Book List Maker by Irina S.
@@ -138,8 +139,10 @@ export const Nav = () => {
           </div>
         </nav>
     </div> 
-  </div> 
-  
+  </div>
+</div>
+
+
       <div className={styles.listBookContainer}>
         {bookList?.length > 0 &&
           bookList?.map((book, cover_id) => {
@@ -157,7 +160,6 @@ export const Nav = () => {
                               className={styles.cover}
                               src={book.cover_url}
                               alt="book cover"
-                              
                             />
                           ) : (
                             <div className={styles.bookCoverContainer}></div>
@@ -185,7 +187,7 @@ export const Nav = () => {
           })}
       </div>
     </div>
-  );
-};
+    );
+ };
 
 export default Nav;
