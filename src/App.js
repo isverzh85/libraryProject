@@ -8,7 +8,7 @@ function App() {
   const [myAddedBookList, setMyAddedBookList] = useState();
 
   return (
-    <div className="App" overflow:auto>
+    <div className="App">
       <MyAddedBookListContext.Provider value={{ myAddedBookList: myAddedBookList, changeAddedBookList: setMyAddedBookList }}>
         <Routing/>
       </MyAddedBookListContext.Provider>
