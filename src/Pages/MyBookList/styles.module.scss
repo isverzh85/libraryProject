@@ -87,7 +87,7 @@
     border-radius: 5px;
     box-sizing: border-box;
     border: 1px solid #C7C7C7;
-    transform: translateY(-100%);
+    transform: translateY(65%);
 }
 
 .deleteButton{
@@ -124,4 +124,5 @@
     display: flex;
     position: relative;
     margin-top: 10px;
+    border-bottom:1px solid #C7C7C7;
 }

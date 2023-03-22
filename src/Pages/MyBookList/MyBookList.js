@@ -4,7 +4,6 @@ import { CSVLink } from 'react-csv';
 import { MyAddedBookListContext } from '../../context/BookList/MyBookListContext';
 
 export const MyBookList = () => {
-  // const [notes, setNotes] = useState({});
   const { myAddedBookList, changeAddedBookList } = useContext(MyAddedBookListContext);
 
   const csvData = [[
@@ -80,15 +79,7 @@ export const MyBookList = () => {
              <div className={styles.bookTitleContainer}>
                <div className={styles.bookAuthorContainer}>
                  <h2 className={styles.title}>{book.title}</h2>
-                    {book.authors?.map((author) => (
-                 <div className={styles.author} key={author.id}>
-                   {author.name}
-                </div>
-              ))}
-           </div>
-               <h2 className={styles.year}>{book.first_publish_year}</h2>
-
-               <form>
+                 <form>
               <textarea 
                   className={styles.form} 
                   id={`notes_${book.cover_id}`}
@@ -98,6 +89,15 @@ export const MyBookList = () => {
                   onChange={(event) => handleNotesSubmissionForm(book.cover_id, event)}
                 ></textarea>
             </form>
+                    {book.authors?.map((author) => (
+                 <div className={styles.author} key={author.id}>
+                   {author.name}
+                </div>
+              ))}
+           </div>
+               <h2 className={styles.year}>{book.first_publish_year}</h2>
+
+             
             </div>   
         </div>
        ))} 

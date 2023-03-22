@@ -62,7 +62,6 @@ export const Nav = () => {
   return (
     <div className={styles.container}>
       <div className={styles.navContainer}> 
-
         <div className={styles.bookNavigationContainer}>
           <div className={styles.descriptionContainer}>
            <div className={styles.descriptionWrapper}>
@@ -71,9 +70,8 @@ export const Nav = () => {
               </h1>
             <p className={styles.paragraph}>
                This is a project that displays books based on the genre and when clicked
-              it retrieves the list of books for that genre.
-            <br />
-             It is created using <strong>ReactJS</strong> and{" "}
+               it retrieves the list of books for that genre. It is created using <strong>ReactJS</strong> 
+               and{" "}
                 <strong>OpenLibraryAPI</strong>.
             </p>
           </div>
@@ -141,8 +139,6 @@ export const Nav = () => {
     </div> 
   </div>
 </div>
-
-
       <div className={styles.listBookContainer}>
         {bookList?.length > 0 &&
           bookList?.map((book, cover_id) => {
