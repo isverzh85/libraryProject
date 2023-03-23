@@ -12,10 +12,18 @@ export const MyBookList = () => {
     `https://covers.openlibrary.org/b/id/${'cover_id'}-L.jpg`,
      `first_publish_year` ,
      `cover_id` ,
+     `notes`,
    ]];
+
      myAddedBookList.forEach((book) => {
       const authorNames = book.authors.map((author) => author.name).join(',');
-      csvData.push([book.title, authorNames, book.cover_url, book.first_publish_year, book.cover_id]);
+      csvData.push([book.title, 
+        authorNames, 
+        book.cover_url, 
+        book.first_publish_year, 
+        book.cover_id,
+        book.notes || ""
+      ]);
   });
 
   function handleBookListChanges(book) {
@@ -27,6 +35,7 @@ export const MyBookList = () => {
         authorNames += ',';
       }
     });
+    
     const updatedBookList = [...myAddedBookList, { 
       title, 
       authors, 
@@ -35,7 +44,6 @@ export const MyBookList = () => {
       cover_id, 
     }];
     changeAddedBookList(updatedBookList);
-    console.log(`${title} ${authorNames} ${cover_id}`);
   }
 
   function handleDeleteFromBookList(coverId) {

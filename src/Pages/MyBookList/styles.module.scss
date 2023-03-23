@@ -1,5 +1,6 @@
 .bookContainer{
-    height:53px;
+    height: calc(100vh - 100px);
+    overflow-y: auto;
     margin-left: 510px;
     margin-top: 20px;
     font-family: 'Inter', sans-serif;
@@ -37,7 +38,7 @@
 
 .title{
     margin-top: 65px;
-    margin-left: 220px;
+    margin-left: 60px;
     font-family: 'Inter', sans-serif;
     font-weight: 700;
     font-size: 20px;
@@ -49,7 +50,7 @@
 
 .author{
     height: auto;
-    margin-left: 220px;
+    margin-left: 60px;
     font-family: 'Inter', sans-serif;
     font-weight: 400;
     font-style: italic;
@@ -68,7 +69,7 @@
     font-size: 20px;
     line-height: 24px;
     color: #373737;
-    margin-left: 220px;
+    margin-left: 60px;
     margin-top:8px;
 }
 
@@ -82,7 +83,7 @@
 .form{
     width:446px;
     height: 101px;
-    margin-left:550px;
+    margin-left:400px;
     position: absolute;
     border-radius: 5px;
     box-sizing: border-box;
@@ -93,13 +94,18 @@
 .deleteButton{
     box-sizing: border-box;
     position:absolute;
-    width:30px;
-    height:30px;
+    width:40px;
+    height:40px;
     top: 40px;
     background: #D93A3A;
     border: 1px solid #FF0000;
     color: white;
     border-radius: 50%;
+    font-weight:bold;
+    font-size:25px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
 }
 
 .deleteButton:hover{
