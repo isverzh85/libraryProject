@@ -91,16 +91,15 @@
 }
 
 .deleteButton{
+    box-sizing: border-box;
+    position:absolute;
     width:30px;
     height:30px;
-    margin-top:20px;
-    position:absolute;
-    // opacity: 0;
-    box-sizing: border-box;
+    top: 40px;
     background: #D93A3A;
     border: 1px solid #FF0000;
-    color:white;
-    transform:translate(40%, 80%);
+    color: white;
+    border-radius: 50%;
 }
 
 .deleteButton:hover{

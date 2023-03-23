@@ -5,13 +5,17 @@ import './Pages/MyBookList/styles.module.scss';
 import { MyAddedBookListContext } from './context/BookList/MyBookListContext';
 
 function App() {
-  const [myAddedBookList, setMyAddedBookList] = useState();
+  const [myAddedBookList, setMyAddedBookList] = useState([]);
 
   return (
     <div className="App">
-      <MyAddedBookListContext.Provider value={{ myAddedBookList: myAddedBookList, changeAddedBookList: setMyAddedBookList }}>
+        <>
+        <header className="App-header">
+        <MyAddedBookListContext.Provider value={{ myAddedBookList: myAddedBookList, changeAddedBookList: setMyAddedBookList }}>
         <Routing/>
       </MyAddedBookListContext.Provider>
+      </header>
+      </>
     </div>
   );
 }

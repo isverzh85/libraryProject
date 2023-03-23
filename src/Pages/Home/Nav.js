@@ -125,14 +125,14 @@ export const Nav = () => {
             >
               sci-fi
             </button>
-            <div className={styles.viewButton}>
-            <button
-              type="button"
-              className={cn(styles.navButton, styles.separateNav)}
-              onClick={() => { history.push('/my-book-list') }}
-            >
-              <img src={logo} alt="logo" className={styles.logo} />
-              View my book list
+            <div className={styles.separateNav}>
+               <button
+                 type="button"
+                 className={cn(styles.navButton, styles.viewButton)}
+                 onClick={() => { history.push('/my-book-list') }}
+                >
+                <img src={logo} alt="logo" className={styles.logo} />
+                  View my book list
             </button>
           </div>
         </nav>
