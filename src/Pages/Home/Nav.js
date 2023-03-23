@@ -134,6 +134,7 @@ export const Nav = () => {
                 <img src={logo} alt="logo" className={styles.logo} />
                   View my book list
             </button>
+
           </div>
         </nav>
     </div> 

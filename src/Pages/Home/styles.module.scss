@@ -167,7 +167,7 @@ body {
     border-radius:100px;
     margin-left: 79px;
     margin-top: 10px;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
 }
 
 .navListItem7:active, .navListItem7:focus, .navListItem7:hover {
@@ -314,10 +314,17 @@ body {
     position: absolute;
     width: 331px;
     height: 55px;
-    left: 60px;
+    left: 3px;
     top: 10px;
     border: 4px solid #00F4BA;
     border-radius: 100px;
+    background: #435F53;
+    font-family:'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    color: #00F4BA;
 }
 
 .bookContainer:hover > .bookButton {

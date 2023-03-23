@@ -12,8 +12,12 @@ export const MyBookList = () => {
     `https://covers.openlibrary.org/b/id/${'cover_id'}-L.jpg`,
      `first_publish_year` ,
      `cover_id` ,
-   ]   
-];
+   ]];
+     myAddedBookList.forEach((book) => {
+      const authorNames = book.authors.map((author) => author.name).join(',');
+      csvData.push([book.title, authorNames, book.cover_url, book.first_publish_year, book.cover_id]);
+  });
+
   function handleBookListChanges(book) {
     const { title, authors, cover_url, first_publish_year, cover_id } = book;
     let authorNames = '';
@@ -55,14 +59,13 @@ export const MyBookList = () => {
   }
 
   return (
-    
     <div className={styles.bookContainer}>
-    <div className={styles.bookListContainer}>
-    <div className={styles.myBookListContainer}>My book list</div>  
-    <button className={styles.exportButton}>
-    <CSVLink data={csvData}>Export to CSV</CSVLink>
-   </button>
-    </div>
+        <div className={styles.bookListContainer}>
+           <div className={styles.myBookListContainer}>My book list</div>  
+               <button className={styles.exportButton}>
+                   <CSVLink data={csvData}>Export to CSV</CSVLink>
+              </button>
+           </div>
     <div className={styles.bookInfoContainer}>
         {myAddedBookList?.map((book, index) => (
              <div className={styles.bookDetailsContainer} key={`${book.cover_id}_${index}`}>
@@ -96,8 +99,6 @@ export const MyBookList = () => {
               ))}
            </div>
                <h2 className={styles.year}>{book.first_publish_year}</h2>
-
-             
             </div>   
         </div>
        ))} 
