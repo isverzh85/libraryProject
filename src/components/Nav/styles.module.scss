@@ -257,14 +257,14 @@ body {
 
 .bookContainer{
     position:relative;
-    display: inline-grid;
-    margin: 5px 50px 0px 5px;
+    // display: inline-grid;
+    // margin: 5px 50px 0px 5px;
 }  
 
 .book{
     display: inline-block;
     position:relative;
-    margin-bottom: 15px;
+    // margin-bottom: 15px;
 }   
 
 .listOfBooks{
@@ -272,6 +272,30 @@ body {
     display:flex;
 }
 
+.bookButton{
+    width:40px;
+    height:40px;
+    background:#6BAEC4;
+    border:1px solid #35689C;
+    color: white;
+    opacity: 0;
+    box-sizing:border-box;
+    border-radius:30px;
+    transition: opacity 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    position:absolute;
+    font-size:24px;
+    font-weight:bold;
+    top: 210px;
+    right: 7px;
+    transform:translate(80%, 0%);
+}
+
+.bookContainer:hover > .bookButton {
+    opacity:1;
+    // background-color: #8fc7d9;
+    // color: #fff;
+    // cursor: pointer;
+}
 /* Mobile screens */
 @media only screen and (max-width: 600px) {
    .listButtons {
