@@ -7,7 +7,7 @@ import { MyAddedBookListContext } from "../../context/BookList/MyBookListContext
 import Navigation from "../../components/Nav/Nav";
 
 
-export const HomePage = ({setBookList}) => {
+export const HomePage = () => {
 
   const history = useHistory(); 
   const [ bookList, setBookList] = useState([]);
@@ -30,7 +30,8 @@ export const HomePage = ({setBookList}) => {
   return (
       <div className={styles.flexContainer}>
         <div className={styles.navWrapper}>
-          <Navigation getBookData={getBookData} />      
+             <Navigation setBookList={setBookList} />
+
              <div className={styles.getDataWrapper}>
                <div className={styles.separateNav}>
                 <button

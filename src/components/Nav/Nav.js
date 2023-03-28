@@ -2,7 +2,6 @@ import React from "react";
 import cn from "classnames";
 import styles from "../../components/Nav/styles.module.scss";
 import Axios from "axios";
-import Home from '../../Pages/Home/Home'
 
 const groupBy = (list, key) => {
     return list.reduce((result, item) => {
@@ -12,7 +11,7 @@ const groupBy = (list, key) => {
     }, {});
   };
 
-const Navigation = ({ bookList, setBookList }) => {
+const Navigation = ({ setBookList }) => {
 
     const getBookData = async (genre) => {
     const books = [];
@@ -41,6 +40,7 @@ const Navigation = ({ bookList, setBookList }) => {
     
 return (
  <div className={styles.container}> 
+
    <div className={styles.navContainer}>
      <div className={styles.bookNavigationContainer}>
        <h1 className={styles.descriptionTitle}>
@@ -105,7 +105,6 @@ return (
         sci-fi
       </button>
     </nav>
-    <Home bookList={bookList} />
    </div>
   </div>
 )}
