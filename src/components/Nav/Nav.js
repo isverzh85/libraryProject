@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import cn from "classnames";
 import styles from "../../components/Nav/styles.module.scss";
 import Axios from "axios";
+import Home from '../../Pages/Home/Home'
 
 const groupBy = (list, key) => {
     return list.reduce((result, item) => {
@@ -11,7 +12,7 @@ const groupBy = (list, key) => {
     }, {});
   };
 
-const Navigation = () => {
+const Navigation = ({ bookList, setBookList }) => {
 
     const getBookData = async (genre) => {
     const books = [];
@@ -32,6 +33,7 @@ const Navigation = () => {
     const groupedBooks = groupBy(books, "first_publish_year");
     const years = Object.keys(groupedBooks).sort((year1, year2) => year2 - year1);
     const bookData = years.map((year) => ({ year, books: groupedBooks[year] }));
+   
     setBookList(bookData);
 
   };
@@ -103,6 +105,7 @@ return (
         sci-fi
       </button>
     </nav>
+    <Home bookList={bookList} />
    </div>
   </div>
 )}

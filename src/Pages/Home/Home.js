@@ -5,7 +5,6 @@ import { useHistory } from "react-router-dom";
 import logo from "../../../src/assets/logo.png";
 import { MyAddedBookListContext } from "../../context/BookList/MyBookListContext.js";
 import Navigation from "../../components/Nav/Nav";
-import {getBookData} from "../../components/Nav/Nav"
 
 
 export const HomePage = ({getBookData}) => {
@@ -14,10 +13,9 @@ export const HomePage = ({getBookData}) => {
   const [ bookList, setBookList] = useState([]);
   const { myAddedBookList, changeAddedBookList } = useContext(MyAddedBookListContext);
 
-    useEffect(() => {
-      changeAddedBookList([]);
-      setBookList([]);
-    }, []);
+  useEffect(() => {
+    changeAddedBookList([]);
+  }, []);
 
   
 
