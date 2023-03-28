@@ -13,12 +13,6 @@ export const HomePage = ({setBookList}) => {
   const [ bookList, setBookList] = useState([]);
   const { myAddedBookList, changeAddedBookList } = useContext(MyAddedBookListContext);
 
-  useEffect(() => {
-    changeAddedBookList([]);
-  }, []);
-
-  
-
   function handleAddToBookList(book) {
     const { title, authors, cover_url, first_publish_year, cover_id } = book;
     let authorNames = '';
