@@ -7,7 +7,7 @@ import { MyAddedBookListContext } from "../../context/BookList/MyBookListContext
 import Navigation from "../../components/Nav/Nav";
 
 
-export const HomePage = ({getBookData}) => {
+export const HomePage = ({setBookList}) => {
 
   const history = useHistory(); 
   const [ bookList, setBookList] = useState([]);
