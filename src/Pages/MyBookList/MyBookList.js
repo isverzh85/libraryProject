@@ -3,23 +3,12 @@ import styles from "../MyBookList/styles.module.scss";
 import { useHistory } from "react-router-dom";
 import { CSVLink } from 'react-csv';
 import cn from "classnames";
-import Axios from "axios";
 import logo from "../../../src/assets/logo.png";
 import { MyAddedBookListContext } from '../../context/BookList/MyBookListContext';
 import Navigation from "../../components/Nav/Nav";
 
-
-const groupBy = (list, key) => {
-  return list.reduce((result, item) => {
-    const year = item[key];
-    (result[year] = result[year] || []).push(item);
-    return result;
-  }, {});
-};
-
 export const MyBookList = (book) => {
   const history = useHistory(); 
-  const [bookList, setBookList] = useState([]);
   const { myAddedBookList, changeAddedBookList } = useContext(MyAddedBookListContext);
 
   const csvData = [[
