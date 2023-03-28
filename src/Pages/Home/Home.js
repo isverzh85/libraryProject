@@ -7,22 +7,16 @@ import { MyAddedBookListContext } from "../../context/BookList/MyBookListContext
 import Navigation from "../../components/Nav/Nav";
 import {getBookData} from "../../components/Nav/Nav"
 
-const groupBy = (list, key) => {
-  return list.reduce((result, item) => {
-    const year = item[key];
-    (result[year] = result[year] || []).push(item);
-    return result;
-  }, {});
-};
 
 export const HomePage = ({getBookData}) => {
 
   const history = useHistory(); 
-  const [bookList, setBookList] = useState([]);
+  const [ bookList, setBookList] = useState([]);
   const { myAddedBookList, changeAddedBookList } = useContext(MyAddedBookListContext);
 
     useEffect(() => {
       changeAddedBookList([]);
+      setBookList([]);
     }, []);
 
   

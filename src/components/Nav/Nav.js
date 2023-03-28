@@ -12,15 +12,14 @@ const groupBy = (list, key) => {
   };
 
 const Navigation = () => {
-    const [bookList, setBookList] = useState([]);
 
     const getBookData = async (genre) => {
-    let books = [];
+    const books = [];
     const bookListAPI = `https://openlibrary.org/subjects/${genre}.json`;
     const bookListAPIResponse = await Axios.get(bookListAPI);
     const bookList = bookListAPIResponse.data.works;
     bookList.forEach((book) => {
-      let bookToRender = {
+      const bookToRender = {
          title: book.title,
          authors: book.authors,
          cover_url:  `https://covers.openlibrary.org/b/id/${book.cover_id}-L.jpg` ,
@@ -30,9 +29,9 @@ const Navigation = () => {
       books.push(bookToRender);
     });
 
-    let groupedBooks = groupBy(books, "first_publish_year");
-    let years = Object.keys(groupedBooks).sort((year1, year2) => year2 - year1);
-    let bookData = years.map((year) => ({ year, books: groupedBooks[year] }));
+    const groupedBooks = groupBy(books, "first_publish_year");
+    const years = Object.keys(groupedBooks).sort((year1, year2) => year2 - year1);
+    const bookData = years.map((year) => ({ year, books: groupedBooks[year] }));
     setBookList(bookData);
 
   };
