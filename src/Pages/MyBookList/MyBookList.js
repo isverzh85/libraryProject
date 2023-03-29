@@ -9,6 +9,7 @@ import Navigation from "../../components/Nav/Nav";
 
 export const MyBookList = (book) => {
   const history = useHistory(); 
+  const [ bookList, setBookList] = useState([]);
   const { myAddedBookList, changeAddedBookList } = useContext(MyAddedBookListContext);
 
   const csvData = [[
@@ -73,26 +74,28 @@ export const MyBookList = (book) => {
 
   return (
   <div className={styles.mainContainer}>
-     <div className={styles.container}>
-         <Navigation book={book}/>
-         </div>
-           <div className={styles.separateNav}>
-           <button
-            type="button"
-            className={cn(styles.navButton, styles.viewButton)}
-            onClick={() => { history.push('/') }}
-          >
-            <img src={logo} alt="logo" className={styles.logo} />
-            Hide my book list
-          </button>
+    <div className={styles.container}>
+      <Navigation setBookList={setBookList} />
+        <div className={styles.getDataWrapper}>
+          <div className={styles.separateNav}>
+            <button
+               type="button"
+               className={cn(styles.navButton, styles.viewButton)}
+               onClick={() => { history.push('/') }}
+             >
+               <img src={logo} alt="logo" className={styles.logo} />
+                  Hide my book list
+             </button>
+        </div>
       </div>
-     <div className={styles.bookContainer}>
-      <div className={styles.myBookListContainer}>My book list</div>
-      <button className={styles.exportButton}>
-        <CSVLink data={csvData}>Export to CSV</CSVLink>
-      </button>
     </div>
+     <div className={styles.myBookContainer}>
+       <div className={styles.myListContainer}>My book list</div>
+         <button className={styles.exportButton}>
+           <CSVLink data={csvData}>Export to CSV</CSVLink>
+        </button>
       
+
   
     <div className={styles.bookInfoContainer}>
       {myAddedBookList?.map((book, index) => (
@@ -116,6 +119,11 @@ export const MyBookList = (book) => {
           <div className={styles.bookTitleContainer}>
             <div className={styles.bookAuthorContainer}>
               <h2 className={styles.title}>{book.title}</h2>
+              <div className={styles.author}>
+              {book.authors && book.authors.length > 0
+                            ? book.authors[0].name
+                            : ""}
+                </div>
               <form>
                 <textarea
                   className={styles.form}
@@ -128,18 +136,19 @@ export const MyBookList = (book) => {
                   }
                 ></textarea>
               </form>
-              {book.authors?.map((author) => (
-                <div className={styles.author} key={author.id}>
-                  {author.name}
-                </div>
-              ))}
+              {/* <div>
+              {book.authors && book.authors.length > 0
+                            ? book.authors[0].name
+                            : ""}
+                </div> */}
             </div>
             <h2 className={styles.year}>{book.first_publish_year}</h2>
-            </div>
           </div>
-        ))}
-      </div>
+        </div>
+      ))}
     </div>
+  </div>
+</div>
 );
  };
        

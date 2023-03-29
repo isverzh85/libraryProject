@@ -1,14 +1,12 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, useContext} from "react";
+import { useHistory } from "react-router-dom";
 import styles from "../../Pages/Home/styles.module.scss";
 import cn from "classnames";
-import { useHistory } from "react-router-dom";
 import logo from "../../../src/assets/logo.png";
 import { MyAddedBookListContext } from "../../context/BookList/MyBookListContext.js";
 import Navigation from "../../components/Nav/Nav";
 
-
 export const HomePage = () => {
-
   const history = useHistory(); 
   const [ bookList, setBookList] = useState([]);
   const { myAddedBookList, changeAddedBookList } = useContext(MyAddedBookListContext);
@@ -31,7 +29,6 @@ export const HomePage = () => {
       <div className={styles.flexContainer}>
         <div className={styles.navWrapper}>
              <Navigation setBookList={setBookList} />
-
              <div className={styles.getDataWrapper}>
                <div className={styles.separateNav}>
                 <button
@@ -103,6 +100,4 @@ export const HomePage = () => {
   );
 }
                         
- 
-
 export default HomePage;

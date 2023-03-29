@@ -37,10 +37,8 @@ const Navigation = ({ setBookList }) => {
 
   };
     
-    
 return (
  <div className={styles.container}> 
-
    <div className={styles.navContainer}>
      <div className={styles.bookNavigationContainer}>
        <h1 className={styles.descriptionTitle}>

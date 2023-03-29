@@ -1,4 +1,5 @@
 .bookContainer{
+    background: #1E1E1E;
     height: calc(100vh - 100px);
     overflow-y: auto;
     margin-left: 510px;
@@ -128,7 +129,7 @@
 .bookDetailsContainer{
     display: flex;
     position: relative;
-    margin-top: 10px;
+    margin: 0px 40px;
     border-bottom:1px solid #C7C7C7;
 }
 
@@ -158,4 +159,26 @@
     font-size: 20px;
     line-height: 24px;
     color: #00F4BA;
+}
+
+.separateNav{
+    position:absolute;
+    border: 1px solid #999999;
+    width:331px;
+    height:0px;
+    margin-left:100px;
+    top:830px;
+}
+
+.logo{
+    position: relative;
+    margin-right:15px;
+}
+
+.mainContainer{
+    display: flex;
+    background: lightgrey;
+
+    // justify-content: space-between;
+    // align-items: center;
 }
