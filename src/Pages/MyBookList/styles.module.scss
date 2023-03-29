@@ -26,7 +26,7 @@
 .exportButton{
     width:200px;
     height:60px;
-    margin-left: 95px;
+    margin-left: 350px;
     font-family: 'Inter', sans-serif;
     font-weight: 700;
     font-size:20px;
@@ -84,7 +84,8 @@
 .form{
     width:446px;
     height: 101px;
-    margin-left:400px;
+    top:0px;
+    margin-left:300px;
     position: absolute;
     border-radius: 5px;
     box-sizing: border-box;
@@ -107,12 +108,14 @@
     display:flex;
     justify-content:center;
     align-items:center;
+    transition: background-color 0.3s ease-in-out;
 }
 
-.deleteButton:hover{
-    background: #D93A3A !important;
-    color:white !important;
-}
+.bookDetailsContainer:hover .deleteButton {
+    opacity: 0;
+    background-color: #D93A3A;
+    cursor: pointer;
+  }
 
 .bookTitleContainer{
     display:flex;
@@ -178,7 +181,21 @@
 .mainContainer{
     display: flex;
     background: lightgrey;
+}
 
-    // justify-content: space-between;
-    // align-items: center;
+.myListContainer{
+    position: absolute;
+width: 260px;
+height: 53px;
+left: 530px;
+top: 27px;
+
+font-family: 'Inter', sans-serif;
+font-style: normal;
+font-weight: 700;
+font-size: 44px;
+line-height: 53px;
+
+color: #373737;
+
 }

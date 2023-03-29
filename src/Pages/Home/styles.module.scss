@@ -156,12 +156,25 @@ body {
     transform:translate(80%, 0%);
 }
 
+.bookButton:hover {
+    background: #35689C;
+    cursor: pointer;
+}
+
 .bookContainer:hover > .bookButton {
     opacity:0;
     background-color: #8fc7d9;
     color: #fff;
     cursor: pointer;
 }
+
+.bookContainer:hover .bookButton {
+    opacity: 0;
+    background-color: #8fc7d9;
+    color: #fff;
+    cursor: pointer;
+  }
+  
 
 .logo{
     position: relative;

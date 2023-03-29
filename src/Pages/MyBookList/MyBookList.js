@@ -123,7 +123,7 @@ export const MyBookList = (book) => {
               {book.authors && book.authors.length > 0
                             ? book.authors[0].name
                             : ""}
-                </div>
+
               <form>
                 <textarea
                   className={styles.form}
@@ -136,6 +136,7 @@ export const MyBookList = (book) => {
                   }
                 ></textarea>
               </form>
+              </div>
               {/* <div>
               {book.authors && book.authors.length > 0
                             ? book.authors[0].name
