@@ -39,8 +39,13 @@ const Navigation = ({ setBookList }) => {
     
 return (
  <div className={styles.container}> 
-   <div className={styles.navContainer}>
+   <div className={styles.navContainer}>     
+    {/* <div className={styles.listButtonsContainer}> */}
+
+
      <div className={styles.bookNavigationContainer}>
+     <div className={styles.listButtonsContainer}>
+
        <h1 className={styles.descriptionTitle}>
          Simple Book List Maker by Irina S.
        </h1>
@@ -52,7 +57,10 @@ return (
         <strong>OpenLibraryAPI</strong>.
       </p>
     </div>
-    <nav className={styles.listButtons}>
+    </div>
+    {/* <div className={styles.listButtonsContainer}> */}
+
+      <nav className={styles.listButtons}>
       <button
         type="button"
         className={cn(styles.navButton, styles.navListItem1)}
@@ -103,8 +111,9 @@ return (
         sci-fi
       </button>
     </nav>
+    </div>
    </div>
-  </div>
+//   </div>
 )}
      
 export default Navigation;   

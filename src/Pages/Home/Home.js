@@ -31,14 +31,16 @@ export const HomePage = () => {
              <Navigation setBookList={setBookList} />
              <div className={styles.getDataWrapper}>
                <div className={styles.separateNav}>
-                <button
+                   <button
                   type="button"
                   className={cn(styles.navButton, styles.viewButton)}
                   onClick={() => {
                   history.push("/my-book-list");
                  }}
                 >
-                  <img src={logo} alt="logo" className={styles.logo} />
+                  <div className={styles.logoContainer}>
+                    <img src={logo} alt="logo" className={styles.logo} />
+                  </div>
                      View my book list
                </button>
             </div>
@@ -77,7 +79,14 @@ export const HomePage = () => {
                             </button>
                           </div>
                         ) : (
-                          <div className={styles.bookCoverContainer}></div>
+                          <div className={styles.bookCoverContainer}>
+                            <button
+                                className={styles.bookEmptyButton}
+                                onClick={() => handleAddToBookList(book)}
+                            >
+                                +
+                            </button>
+                          </div>
                         )}
                       </div>
                       <div>

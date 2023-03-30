@@ -6,6 +6,7 @@ body {
 .container {
     display: flex;
     justify-content: space-between;
+    height:600px;
 }
 
 .separateNav{
@@ -13,14 +14,13 @@ body {
     border: 1px solid #999999;
     width:331px;
     height:0px;
-    margin-left:100px;
-    top:830px;
+    margin-left:80px;
+    top:800px;
 }
 
 .flexContainer{
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    height:50px;
 }
 
 .navButton{
@@ -52,7 +52,6 @@ body {
     position:relative;
 }
 
-
 .text{
     font-family: 'Inter', sans-serif;
     font-weight: 700;
@@ -80,11 +79,9 @@ body {
     background-color: #f2f2f2;
     border:1px solid black;
     border-radius: 10px;
+    margin-right:495px;
+    margin-bottom:10px;
 }
-
-.coverContainer {
-    position: relative;
-  }
 
 .descriptionTitle{
     width:328px;
@@ -116,11 +113,11 @@ body {
 
 .viewButton{
     box-sizing: border-box;
-    position: relative;
+    position: absolute;
     width: 331px;
     height: 55px;
     left: 3px;
-    top: 20px;
+    top: 30px;
     border: 4px solid #00F4BA;
     border-radius: 100px;
     background: #435F53;
@@ -132,10 +129,13 @@ body {
     color: #00F4BA;
 }
 
+.logoContainer {
+    display: inline-block;
+    margin-right: 30px;
+  }
+
 .bookContainer{
     position:relative;
-    // display: inline-grid;
-    // margin: 5px 50px 0px 5px;
 } 
 
 .bookButton{
@@ -144,7 +144,7 @@ body {
     background:#6BAEC4;
     border:1px solid #35689C;
     color: white;
-    opacity: 1;
+    opacity: 0;
     box-sizing:border-box;
     border-radius:30px;
     transition: opacity 0.3s ease-in-out, background-color 0.3s ease-in-out;
@@ -152,41 +152,70 @@ body {
     font-size:24px;
     font-weight:bold;
     top: 210px;
-    right: 7px;
+    right: 25px;
     transform:translate(80%, 0%);
 }
 
-.bookButton:hover {
-    background: #35689C;
-    cursor: pointer;
-}
-
-.bookContainer:hover > .bookButton {
-    opacity:0;
-    background-color: #8fc7d9;
-    color: #fff;
-    cursor: pointer;
-}
-
 .bookContainer:hover .bookButton {
-    opacity: 0;
+    opacity: 1;
     background-color: #8fc7d9;
     color: #fff;
     cursor: pointer;
   }
+
+  .bookEmptyButton{
+    width:40px;
+    height:40px;
+    background:#6BAEC4;
+    border:1px solid #35689C;
+    color: white;
+    opacity: 0;
+    box-sizing:border-box;
+    border-radius:30px;
+    transition: opacity 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    position:absolute;
+    font-size:24px;
+    font-weight:bold;
+    top: 210px;
+    right: 25px;
+    transform:translate(80%, 0%);
+}
+
+.bookContainer:hover .bookEmptyButton {
+    opacity: 1;
+    background-color: #8fc7d9;
+    color: #fff;
+    cursor: pointer;
+  }
+
+//  .bookCoverContainer:hover .bookButton {
+//     opacity: 1;
+//     background-color: #8fc7d9;
+//     color: #fff;
+//     cursor: pointer;
+//  }
   
 
+// .book:hover .bookButton {
+//     opacity: 1;
+//     background-color: #8fc7d9;
+//     color: #fff;
+//     cursor: pointer;
+//   }
+
 .logo{
-    position: relative;
+    position:absolute;
+    left:15.25%;
+    top: 29.55%;
     margin-right:15px;
 }
 
 .listBookContainer{
-    flex: 1;
-    padding: 0px 40px 5px;
+    position:absolute;
+    left:500px;
+    top:0;
     overflow-y: scroll;
-    height:95vh;
-  }
+}
   
   .listButtons{
     margin-top: 0;
@@ -198,9 +227,10 @@ body {
     padding: 0px 40px 5px;
     overflow-y: scroll;
     height:95vh;
-  }
+}
 
   .title{
+    height:24px;
     color: #373737;
     font-family: 'Inter', sans-serif;
     font-style: normal;
@@ -221,10 +251,12 @@ body {
 
 .cover{
     display: block;
-    width: 100%;
+    width: 176px;
     height: 244px;
     background-color: blue;
     border-radius:10px;
+    margin-right:20px;
+    margin-bottom:10px;
 }
 
 .year{
