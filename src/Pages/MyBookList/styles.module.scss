@@ -25,7 +25,6 @@
 
 .myBookContainer{
     display:flex;
-    justify-content:space-between;
     margin:20px;
 }
 
@@ -201,9 +200,6 @@
 }
 
 .myListContainer{
-    position: absolute;
-    width: 260px;
-    height: 53px;
     left: 557px;
     top: 27px;
     font-family: 'Inter', sans-serif;
@@ -215,8 +211,9 @@
 }
 
 .bookInfoContainer{
+    max-height:100vh;
     overflow-y: scroll;
-
+    flex:1;
 }
 
 /* Mobile styles */
