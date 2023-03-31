@@ -1,7 +1,8 @@
 .bookContainer{
-    background: #1E1E1E;
+    background: #F9F9F9;
     height: calc(100vh - 100px);
-    overflow-y: auto;
+    // overflow-y: auto;
+    // overflow-y: scroll;
     margin-left: 510px;
     margin-top: 20px;
     font-family: 'Inter', sans-serif;
@@ -11,12 +12,21 @@
     color: #373737;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
 }
 
 .myBookListContainer{
+        // overflow-y: scroll;
+
    display:flex;
    align-items: center;
    transform:translateX(8%);
+}
+
+.myBookContainer{
+    display:flex;
+    justify-content:space-between;
+    margin:20px;
 }
 
 .bookListContainer{
@@ -26,7 +36,7 @@
 .exportButton{
     width:200px;
     height:60px;
-    margin-left: 350px;
+    margin-left: 400px;
     font-family: 'Inter', sans-serif;
     font-weight: 700;
     font-size:20px;
@@ -38,8 +48,6 @@
 }
 
 .title{
-    margin-top: 65px;
-    margin-left: 60px;
     font-family: 'Inter', sans-serif;
     font-weight: 700;
     font-size: 20px;
@@ -47,18 +55,32 @@
     font-style: italic;
     color: #373737;
     position: absolute;
+    height:24px;
+    max-width:265px;
+    text-overflow:ellipsis;
+    overflow:hidden;
+    left:130px;
+    bottom:111px;
+    white-space: nowrap;
 }
 
 .author{
+    position:absolute;
     height: auto;
     margin-left: 60px;
+    left:70px;
+    bottom: 90px;
+    white-space: nowrap;
     font-family: 'Inter', sans-serif;
     font-weight: 400;
     font-style: italic;
     font-size: 20px;
     line-height: 24.2px;
     color: #373737;
-    margin-top:95px;
+    margin-top:45px;
+    max-width:265px;
+    text-overflow:ellipsis;
+    overflow:hidden;
 }
 
 .year{
@@ -70,14 +92,16 @@
     font-size: 20px;
     line-height: 24px;
     color: #373737;
-    margin-left: 60px;
-    margin-top:8px;
+    position:absolute;
+    top:121px;
+    margin:5px  50px 20px;
 }
 
 .image{
     width: 59px;
     height: 82px;
-    margin-top: 45px;
+    margin-top: 70px;
+    margin-bottom:55px;
     border-radius: 10px;
 }
 
@@ -85,7 +109,7 @@
     width:446px;
     height: 101px;
     top:0px;
-    margin-left:300px;
+    margin-left:370px;
     position: absolute;
     border-radius: 5px;
     box-sizing: border-box;
@@ -98,35 +122,25 @@
     position:absolute;
     width:40px;
     height:40px;
-    top: 40px;
+    top: 50px;
+    left:0px;
     background: #D93A3A;
     border: 1px solid #FF0000;
     color: white;
     border-radius: 50%;
     font-weight:bold;
     font-size:25px;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    transition: background-color 0.3s ease-in-out;
+    opacity:0;
 }
 
 .bookDetailsContainer:hover .deleteButton {
-    opacity: 0;
+    opacity: 1;
     background-color: #D93A3A;
     cursor: pointer;
   }
 
-.bookTitleContainer{
-    display:flex;
-    flex-direction: column;
-    justify-content: flex-end; 
-}
-
 .bookImageContainer{
   margin-left: 20px;
-  margin-top: 10px;
-  position:relative;
 }
 
 .bookDetailsContainer{
@@ -134,6 +148,7 @@
     position: relative;
     margin: 0px 40px;
     border-bottom:1px solid #C7C7C7;
+    width:35vw;
 }
 
 .bookNavigationContainer{
@@ -182,22 +197,88 @@
 
 .mainContainer{
     display: flex;
-    background: lightgrey;
+    background-color: #F9F9F9;
 }
 
 .myListContainer{
     position: absolute;
-width: 260px;
-height: 53px;
-left: 530px;
-top: 27px;
+    width: 260px;
+    height: 53px;
+    left: 557px;
+    top: 27px;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 44px;
+    line-height: 53px;
+    color: #373737;
+}
 
-font-family: 'Inter', sans-serif;
-font-style: normal;
-font-weight: 700;
-font-size: 44px;
-line-height: 53px;
+.bookInfoContainer{
+    overflow-y: scroll;
 
-color: #373737;
+}
 
+/* Mobile styles */
+@media only screen and (max-width: 600px) {
+    .myBookListContainer {
+      flex-direction: column;
+      transform: none;
+      align-items: flex-start;
+      margin-left: 0;
+      margin-top: 20px;
+    }
+  
+    .bookContainer {
+      height: calc(100vh - 210px);
+    }
+  
+    .exportButton {
+      margin: 0 auto;
+    }
+  .bookDetailsContainer {
+    width: 100%;
+    margin: 0;
+  }
+
+  .bookNavigationContainer {
+    width: 100%;
+  }
+
+  .deleteButton {
+    display: none;
+  }
+
+  .bookImageContainer {
+    margin: 0;
+    margin-right: 10px;
+  }
+  .image {
+    width: 44px;
+    height: 61px;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .bookDetailsContainer .bookDetails {
+    margin-left: 0;
+  }
+
+  .title, .author, .year {
+    font-size: 16px;
+    line-height: 20px;
+    max-width: 180px;
+  }
+
+  .title {
+    bottom: 85px;
+  }
+  .author {
+    bottom: 65px;
+    margin-top: 10px;
+  }
+  .year {
+    top: 100px;
+    margin: 0;
+  }
 }

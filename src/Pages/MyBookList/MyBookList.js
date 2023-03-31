@@ -89,20 +89,18 @@ export const MyBookList = (book) => {
         </div>
       </div>
     </div>
-     <div className={styles.myBookContainer}>
-       <div className={styles.myListContainer}>My book list</div>
-         <button className={styles.exportButton}>
-           <CSVLink data={csvData}>Export to CSV</CSVLink>
-        </button>
-      
-
-  
     <div className={styles.bookInfoContainer}>
-      {myAddedBookList?.map((book, index) => (
-        <div
-          className={styles.bookDetailsContainer}
-          key={`${book.cover_id}_${index}`}
-        >
+      <div className={styles.myBookContainer}>
+        <div className={styles.myListContainer}>My book list</div>
+          <button className={styles.exportButton}>
+            <CSVLink data={csvData}>Export to CSV</CSVLink>
+         </button>
+        </div>
+          {myAddedBookList?.map((book, index) => (
+           <div
+              className={styles.bookDetailsContainer}
+              key={`${book.cover_id}_${index}`}
+            >
           <div className={styles.bookImageContainer}>
             <img
               className={styles.image}
@@ -110,20 +108,21 @@ export const MyBookList = (book) => {
               alt={book.title}
             />
           </div>
+          <div className={styles.bookTitleContainer}>
           <button
             className={styles.deleteButton}
             onClick={() => handleDeleteFromBookList(book.cover_id)}
           >
             -
           </button>
-          <div className={styles.bookTitleContainer}>
             <div className={styles.bookAuthorContainer}>
               <h2 className={styles.title}>{book.title}</h2>
               <div className={styles.author}>
-              {book.authors && book.authors.length > 0
+                 {book.authors && book.authors.length > 0
                             ? book.authors[0].name
                             : ""}
-
+              </div>
+                <div className={styles.year}>{book.first_publish_year}</div>
               <form>
                 <textarea
                   className={styles.form}
@@ -136,21 +135,13 @@ export const MyBookList = (book) => {
                   }
                 ></textarea>
               </form>
-              </div>
-              {/* <div>
-              {book.authors && book.authors.length > 0
-                            ? book.authors[0].name
-                            : ""}
-                </div> */}
+              </div>  
             </div>
-            <h2 className={styles.year}>{book.first_publish_year}</h2>
           </div>
-        </div>
       ))}
     </div>
-  </div>
-</div>
-);
- };
+   </div>
+ );
+};
        
 export default MyBookList;

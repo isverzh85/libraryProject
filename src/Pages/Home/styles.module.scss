@@ -47,11 +47,6 @@ body {
     display: flex;
 }
 
-.book{
-    display: inline-block;
-    position:relative;
-}
-
 .text{
     font-family: 'Inter', sans-serif;
     font-weight: 700;
@@ -136,6 +131,7 @@ body {
 
 .bookContainer{
     position:relative;
+
 } 
 
 .bookButton{
@@ -188,21 +184,6 @@ body {
     cursor: pointer;
   }
 
-//  .bookCoverContainer:hover .bookButton {
-//     opacity: 1;
-//     background-color: #8fc7d9;
-//     color: #fff;
-//     cursor: pointer;
-//  }
-  
-
-// .book:hover .bookButton {
-//     opacity: 1;
-//     background-color: #8fc7d9;
-//     color: #fff;
-//     cursor: pointer;
-//   }
-
 .logo{
     position:absolute;
     left:15.25%;
@@ -238,6 +219,12 @@ body {
     font-size: 20px;
     line-height: 24px;
     margin-bottom: 10px;
+    max-width:265px;
+    text-overflow:ellipsis;
+    overflow:hidden;
+    left:130px;
+    bottom:111px;
+    white-space: nowrap;
 }
 
   .author{
@@ -247,6 +234,12 @@ body {
      font-size: 20px;
      line-height: 24px;
      color: #373737;
+     max-width:265px;
+     text-overflow:ellipsis;
+     overflow:hidden;
+     left:130px;
+     bottom:111px;
+     white-space: nowrap;
 }
 
 .cover{
@@ -270,76 +263,54 @@ body {
     text-align: center;
 }
 
-/* Mobile screens */
-@media only screen and (max-width: 600px) {
-    .list {
-      width: 100%;
-      height: auto;
-      padding: 10px;
-    }
-    
-    .description {
-      height: auto;
-    }
-    
-    .listButtons {
-      width: 80%;
-      height: auto;
-      margin-left: 0;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      grid-gap: 10px;
-    }
-    .navListItem1, .navListItem2, .navListItem3, .navListItem4, .navListItem5, .navListItem6, .navListItem7 {
-        width: 100%;
-        margin-left: 0;
-        margin-top: 10px;
-        margin-bottom: 10px;
-      }
-      
-      .title, .author {
-        font-size: 16px;
-        line-height: 20px;
-      }
-      
-      .cover {
-        width: 100%;
-      }
-    }
+@media screen and (max-width: 768px) {
 
-/* For tablet screens */
-@media (max-width: 768px) {
-    .list {
-      width: 80%;
-      margin: 0 auto;
-    }
-  
-    .description {
-      height: auto;
-      padding: 10px;
-    }
-  
-    .listButtons {
-      height: auto;
-    }
-  
-    .navButton {
-      font-size: 18px;
-      line-height: 24px;
-    }
-  
-    .title, .author {
-      font-size: 16px;
-      line-height: 20px;
-    }
+  .container {
+  flex-direction: column;
+  height: 100vh;
   }
   
-  /* For desktop screens */
-.list {
-    width: 370px;
-    height: 200px;
+  .separateNav {
+  position: static;
+  width: 100%;
+  margin-left: 0;
+  margin-top: 20px;
+  border: none;
+  height: auto;
   }
-  
-  .description {
-    height: 95vh;
-  }
-  
+
+  .listBookContainer {
+    position: static;
+    width: 100%;
+    top: auto;
+    left: auto;
+    padding: 0;
+    margin-top: 40px;
+    height: auto;
+    }
+    }
+    
+    .container {
+    display: flex;
+    justify-content: space-between;
+    height: 600px;
+    }
+    .separateNav {
+      position: absolute;
+      border: 1px solid #999999;
+      width: 331px;
+      height: 0px;
+      margin-left: 80px;
+      top: 800px;
+      }
+      
+      .listBookContainer {
+      position: absolute;
+      left: 500px;
+      top: 0;
+      overflow-y: scroll;
+      height: 95vh;
+      }
+
+
+
