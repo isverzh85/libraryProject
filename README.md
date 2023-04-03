@@ -1,6 +1,6 @@
-# libraryProject
+# Project Name: Simple Book List Maker
 
-This project is a simple book list where the user can click on the genre and select the book as well as put it in their book list. They can include notes and then export it as a CSV file.
+# Project Description: Simple Book List Maker is a web application created by Irina Sverzhanovskaya that allows users to display books based on the genre and retrieve a list of books from that genre. The application is built using ReactJS and utilizes the OpenLibraryAPI to retrieve book information. Users can select a genre from a dropdown menu, and the application will display a list of books that match that genre. Clicking on a book will retrieve more detailed information about the book, including the title, author, and publication information. Simple Book List Maker is a useful tool for book enthusiasts who want to easily browse and organize books based on genre.
 
 ## Available Scripts
 
