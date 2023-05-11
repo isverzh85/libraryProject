@@ -14,6 +14,8 @@ Simple Book List Maker aims to enhance the book browsing and organization experi
 
 https://drive.google.com/file/d/1EvMhNNybKVtavoi9__-cO4kxjBAdYAF9/view?usp=share_link
 
+https://drive.google.com/file/d/1fTiOssgGDSjtGz0e8ZMg0XaAhoLee_L6/view?usp=share_link
+
 ## Available Scripts
 
 In the project directory, you can run:
