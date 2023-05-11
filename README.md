@@ -12,6 +12,8 @@ Simple Book List Maker aims to enhance the book browsing and organization experi
 
 [Export to CSV] (https://drive.google.com/file/d/1ItOwP-q87m2QUGtLYGvneI4b-IbOm2b0/view?usp=share_link)
 
+https://drive.google.com/file/d/1EvMhNNybKVtavoi9__-cO4kxjBAdYAF9/view?usp=share_link
+
 ## Available Scripts
 
 In the project directory, you can run:
