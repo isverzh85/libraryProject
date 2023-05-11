@@ -10,6 +10,10 @@ Detailed Book Information: Simple Book List Maker provides users with detailed i
 
 Simple Book List Maker aims to enhance the book browsing and organization experience for users, catering to their specific genre preferences. Whether you are seeking new reading recommendations, researching specific genres, or simply exploring books within a preferred category, this web application offers a straightforward and efficient way to discover and manage your book collection.
 
+![Export to CSV](https://github.com/isverzh85/libraryProject/issues/2#issue-1706280871)
+
+
+
 ## Available Scripts
 
 In the project directory, you can run:
