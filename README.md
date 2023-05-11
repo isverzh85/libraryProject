@@ -1,6 +1,14 @@
-# Project Name: Simple Book List Maker
+# Name: Simple Book List Maker
 
-Project Description: Simple Book List Maker is a web application created by Irina Sverzhanovskaya that allows users to display books based on the genre and retrieve a list of books from that genre. The application is built using ReactJS and utilizes the OpenLibraryAPI to retrieve book information. Users can select a genre from a dropdown menu, and the application will display a list of books that match that genre. Clicking on a book will retrieve more detailed information about the book, including the title, author, and publication information. Simple Book List Maker is a useful tool for book enthusiasts who want to easily browse and organize books based on genre.
+Description: Simple Book List Maker is a user-friendly web application developed by Irina Sverzhanovskaya. Its purpose is to provide book enthusiasts with a convenient way to browse and organize books based on genre. Built using ReactJS, this application integrates the powerful OpenLibraryAPI to retrieve comprehensive book information.
+
+Key Features:
+
+Genre-based Book Display: Users can select a specific genre from a dropdown menu within the application. Upon selection, the application dynamically generates and displays a list of books that belong to that genre. This feature allows users to explore books tailored to their specific interests.
+
+Detailed Book Information: Simple Book List Maker provides users with detailed information about each book. By clicking on a book within the generated list, users can access additional details such as the book's title, author, and publication information. This feature enables users to gain a deeper understanding of the books they are interested in.
+
+Simple Book List Maker aims to enhance the book browsing and organization experience for users, catering to their specific genre preferences. Whether you are seeking new reading recommendations, researching specific genres, or simply exploring books within a preferred category, this web application offers a straightforward and efficient way to discover and manage your book collection.
 
 ## Available Scripts
 
