@@ -12,7 +12,7 @@ Simple Book List Maker aims to enhance the book browsing and organization experi
 
 [Export to CSV] (https://drive.google.com/file/d/1ItOwP-q87m2QUGtLYGvneI4b-IbOm2b0/view?usp=share_link)
 
-[Image2](https://drive.google.com/file/d/1EvMhNNybKVtavoi9__-cO4kxjBAdYAF9/view?usp=share_link)
+[First Image](https://drive.google.com/file/d/1EvMhNNybKVtavoi9__-cO4kxjBAdYAF9/view?usp=share_link)
 
 https://drive.google.com/file/d/1fTiOssgGDSjtGz0e8ZMg0XaAhoLee_L6/view?usp=share_link
 
